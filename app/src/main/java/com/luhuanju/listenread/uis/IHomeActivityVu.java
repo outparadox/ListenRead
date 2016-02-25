@@ -16,5 +16,7 @@ public interface IHomeActivityVu {
 
     public abstract <T> void onShowFragmentUi(FragmentTransaction fragmentTransaction);
 
+    public abstract <T> void onResumeUi();
+
 
 }

@@ -24,8 +24,14 @@ public class HomeActivityPresenter implements IHomeActivtyPresenter {
 
 
     @Override
-    public <T> T getObjectComponentOnP(T t) {
+    public <T> T getObjectComponentOnP(T... t) {
         mHomeActivityVu.onShowFragmentUi(mHomeActivityModel.getObjectComponentOnM(mHomeAvtivityContext));
+        return null;
+    }
+
+    @Override
+    public <T> T onResumeUiOnP(T... t) {
+        mHomeActivityVu.onResumeUi();
         return null;
     }
 
