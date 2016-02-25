@@ -6,7 +6,9 @@ package com.luhuanju.listenread.presenters;
 public interface IHomeActivtyPresenter extends IPersenter {
 
 
-    <T> T getObjectComponentOnP(T t);
+    <T> T getObjectComponentOnP(T... t);
+    <T> T onResumeUiOnP(T... t);
+
 
 
 }

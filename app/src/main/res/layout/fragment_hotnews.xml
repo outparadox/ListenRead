@@ -37,10 +37,16 @@
         app:AniBackColor="#ff0097cd">
 
         <!--<android.support.v7.widget.RecyclerView-->
-            <!--android:id="@+id/hotnews_recy"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="match_parent"-->
-            <!--android:scrollbars="none"/>-->
+        <!--android:id="@+id/hotnews_recy"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:scrollbars="none"/>-->
+        <ListView
+            android:id="@+id/list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#ffffffff"></ListView>
+
 
 
     </com.tuesda.walker.circlerefresh.CircleRefreshLayout>

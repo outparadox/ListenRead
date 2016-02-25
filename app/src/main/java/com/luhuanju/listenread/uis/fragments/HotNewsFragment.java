@@ -11,15 +11,19 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 import com.luhuanju.listenread.R;
 import com.luhuanju.listenread.uis.IHotNewsFragmentVu;
 import com.tuesda.walker.circlerefresh.CircleRefreshLayout;
 
 import butterknife.ButterKnife;
+import butterknife.InjectView;
 
-public class HotNewsFragment extends Fragment implements IHotNewsFragmentVu {
-    //    @InjectView(R.id.hotnews_refresh)
+public class HotNewsFragment extends Fragment implements IHotNewsFragmentVu, CircleRefreshLayout.OnCircleRefreshListener {
+    @InjectView(R.id.list)
+    ListView mList;
     CircleRefreshLayout mRefreshLayout;
 //    @InjectView(R.id.hotnews_recy)
 //    RecyclerView mShowDataRecy;
@@ -35,8 +39,30 @@ public class HotNewsFragment extends Fragment implements IHotNewsFragmentVu {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = LayoutInflater.from(getActivity()).inflate(R.layout.fragment_hotnews, null);
         mRefreshLayout = (CircleRefreshLayout) view.findViewById(R.id.hotnews_refresh);
-        ButterKnife.inject(this, view);
-        initUisCallBack();
+        initData(view);
+
+
+
+        String[] strs = {
+                "The",
+                "Canvas",
+                "class",
+                "holds",
+                "the",
+                "draw",
+                "calls",
+                ".",
+                "To",
+                "draw",
+                "something,",
+                "you",
+                "need",
+                "4 basic",
+                "components",
+                "Bitmap",
+        };
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, strs);
+        mList.setAdapter(adapter);
         return view;
     }
 
@@ -44,40 +70,35 @@ public class HotNewsFragment extends Fragment implements IHotNewsFragmentVu {
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
+    }
+
+
+    @Override
+    public void onShowCarouseOnP() {
 
     }
 
     @Override
-    public void onShowCarouse() {
+    public void onShowDataOnP() {
 
     }
-
-    @Override
-    public void onShowData() {
-
-    }
-
 
     @Override
     public void onDestroyView() {
         super.onDestroyView();
     }
 
-    void initUisCallBack() {
-        mRefreshLayout.setOnRefreshListener(new CircleRefreshLayout.OnCircleRefreshListener() {
-            @Override
-            public void completeRefresh() {
-
-            }
-
-            @Override
-            public void refreshing() {
-
-            }
-        });
-
+    @Override
+    public void completeRefresh() {
 
     }
 
+    @Override
+    public void refreshing() {
 
+    }
+
+    private void initData(View view){
+        ButterKnife.inject(this, view);
+    }
 }
