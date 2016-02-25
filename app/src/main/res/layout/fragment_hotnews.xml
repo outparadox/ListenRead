@@ -1,0 +1,49 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context=".MainActivity">
+
+    <!--<com.pixplicity.multiviewpager.MultiViewPager-->
+    <!--android:id="@+id/pager"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="0dp"-->
+    <!--android:layout_marginTop="16dp"-->
+    <!--android:layout_weight="1"-->
+    <!--app:matchChildWidth="@+id/child_view_to_match" />-->
+    <RelativeLayout
+        android:id="@+id/rely_test"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        >
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:text="Large Text"
+            android:textAppearance="?android:attr/textAppearanceLarge"/>
+    </RelativeLayout>
+
+    <com.tuesda.walker.circlerefresh.CircleRefreshLayout
+        android:id="@+id/hotnews_refresh"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/rely_test"
+        app:AniBackColor="#ff0097cd">
+
+        <!--<android.support.v7.widget.RecyclerView-->
+            <!--android:id="@+id/hotnews_recy"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:scrollbars="none"/>-->
+
+
+    </com.tuesda.walker.circlerefresh.CircleRefreshLayout>
+
+
+</RelativeLayout>
