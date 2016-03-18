@@ -15,6 +15,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.luhuanju.listenread.R;
+import com.luhuanju.listenread.presenters.IHotNewsFragmentPresenter;
+import com.luhuanju.listenread.presenters.impls.HotNewsFragmentPresenter;
 import com.luhuanju.listenread.uis.IHotNewsFragmentVu;
 import com.tuesda.walker.circlerefresh.CircleRefreshLayout;
 
@@ -29,18 +31,24 @@ public class HotNewsFragment extends Fragment implements IHotNewsFragmentVu, Cir
 //    RecyclerView mShowDataRecy;
 
 
+    private IHotNewsFragmentPresenter mIHotNewsFragmentPresenter = null;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ButterKnife.inject(getActivity());
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = LayoutInflater.from(getActivity()).inflate(R.layout.fragment_hotnews, null);
         mRefreshLayout = (CircleRefreshLayout) view.findViewById(R.id.hotnews_refresh);
+        view.findViewById(R.id.textView).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mIHotNewsFragmentPresenter.onShowDataOnP(getActivity());
+            }
+        });
         initData(view);
-
 
 
         String[] strs = {
@@ -61,6 +69,7 @@ public class HotNewsFragment extends Fragment implements IHotNewsFragmentVu, Cir
                 "components",
                 "Bitmap",
         };
+
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, strs);
         mList.setAdapter(adapter);
         return view;
@@ -74,12 +83,12 @@ public class HotNewsFragment extends Fragment implements IHotNewsFragmentVu, Cir
 
 
     @Override
-    public void onShowCarouseOnP() {
+    public void onShowCarouse() {
 
     }
 
     @Override
-    public void onShowDataOnP() {
+    public void onShowData() {
 
     }
 
@@ -98,7 +107,9 @@ public class HotNewsFragment extends Fragment implements IHotNewsFragmentVu, Cir
 
     }
 
-    private void initData(View view){
+    private void initData(View view) {
         ButterKnife.inject(this, view);
+        mIHotNewsFragmentPresenter = mIHotNewsFragmentPresenter != null ? mIHotNewsFragmentPresenter : new HotNewsFragmentPresenter(getActivity(), this);
+        mIHotNewsFragmentPresenter.onShowDataOnP(getActivity());
     }
 }
