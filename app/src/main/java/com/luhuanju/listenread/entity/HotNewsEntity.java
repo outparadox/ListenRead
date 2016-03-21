@@ -12,6 +12,11 @@ public class HotNewsEntity {
     private String content;
     private String url;
     private String time;
+    private String remark;
+
+    public void setRemark(String remark) {
+        this.remark = remark;
+    }
 
     public void setContent(String content) {
         this.content = content;

@@ -7,14 +7,17 @@ package com.luhuanju.listenread.utils;/*
 
 import android.os.AsyncTask;
 
+import com.luhuanju.listenread.entity.HotNewsEntity;
+
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
 import java.io.IOException;
+import java.util.List;
 
 public class XMLDataParseUtil {
-    private  DocumentPOJOCallback mDocumentPOJOCallback = null;
-    private  Document mDocument;
+    private DocumentPOJOCallback mDocumentPOJOCallback = null;
+    private Document mDocument;
     private static XMLDataParseUtil mXmlDataParseUtil = null;
 
     private XMLDataParseUtil() {
@@ -38,7 +41,7 @@ public class XMLDataParseUtil {
     }
 
     public interface DocumentPOJOCallback {
-        void onDocumentPOJO(Document document);
+        List<HotNewsEntity> onDocumentPOJO(Document document);
 
     }
 
@@ -47,12 +50,14 @@ public class XMLDataParseUtil {
     }
 
 
-    public void onDocumentPOJO(String url) {
+    public List<HotNewsEntity> onDocumentPOJO(String url) {
 
         new DocumentPOJOAsyncTask(url).execute();
+
+        return null;
     }
 
-     class DocumentPOJOAsyncTask extends AsyncTask<Void, Void, Document> {
+    class DocumentPOJOAsyncTask extends AsyncTask<Void, Void, Document> {
         private String mUrl;
 
         public DocumentPOJOAsyncTask(String url) {
@@ -74,6 +79,7 @@ public class XMLDataParseUtil {
         protected void onPostExecute(Document document) {
             if (document == null || mDocumentPOJOCallback == null) return;
             mDocumentPOJOCallback.onDocumentPOJO(document);
+
         }
     }
 
