@@ -8,7 +8,6 @@ package com.luhuanju.listenread.uis.fragments;/*
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,7 +27,7 @@ import java.util.List;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
-public class HotNewsFragment extends Fragment implements IHotNewsFragmentVu, CircleRefreshLayout.OnCircleRefreshListener, HotNewsFragmentModel.HotNewsEntityPOJOCallBack {
+public class HotNewsFragment extends Fragment implements IHotNewsFragmentVu, CircleRefreshLayout.OnCircleRefreshListener {
     @InjectView(R.id.list)
     ListView mList;
     CircleRefreshLayout mRefreshLayout;
@@ -73,8 +72,13 @@ public class HotNewsFragment extends Fragment implements IHotNewsFragmentVu, Cir
     }
 
     @Override
-    public void onShowData() {
-
+    public void onShowData(List<HotNewsEntity> hotNewsEntities) {
+        mData = new String[hotNewsEntities.size()];
+        for (int m = 0; m < hotNewsEntities.size(); m++) {
+            mData[m] = hotNewsEntities.get(m).getTitle();
+        }
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, mData);
+        mList.setAdapter(adapter);
     }
 
     @Override
@@ -95,29 +99,9 @@ public class HotNewsFragment extends Fragment implements IHotNewsFragmentVu, Cir
     private void initData(View view) {
 
         ButterKnife.inject(this, view);
-        //绕过了PRESENTER
-        mHotNewsFragmentModel = new HotNewsFragmentModel(getActivity(), mList);
-        mHotNewsFragmentModel.setHotNewsEntityPOJOListener(this);
-
         mIHotNewsFragmentPresenter = mIHotNewsFragmentPresenter != null ? mIHotNewsFragmentPresenter : new HotNewsFragmentPresenter(getActivity(), this);
         mIHotNewsFragmentPresenter.onShowDataOnP(getActivity(), mList);
 
-
-    }
-
-
-    @Override
-    public void onHotNewsEntityPOJOSuccess(List<HotNewsEntity> hotNewsEntities, FragmentActivity activity, ListView listView) {
-        mData = new String[hotNewsEntities.size()];
-        for (int m = 0; m < hotNewsEntities.size(); m++) {
-            mData[m] = hotNewsEntities.get(m).getTitle();
-        }
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(activity, android.R.layout.simple_list_item_1, mData);
-        listView.setAdapter(adapter);
-    }
-
-    @Override
-    public void onHotNewsEntityPOJOFailed() {
 
     }
 }

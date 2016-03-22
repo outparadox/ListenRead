@@ -11,7 +11,6 @@ import android.widget.ListView;
 
 import com.luhuanju.listenread.entity.HotNewsEntity;
 import com.luhuanju.listenread.models.IHotNewsFragmentModel;
-import com.luhuanju.listenread.uis.fragments.HotNewsFragment;
 import com.luhuanju.listenread.utils.XMLDataParseUtil;
 
 import org.jsoup.nodes.Document;
@@ -27,6 +26,7 @@ public class HotNewsFragmentModel implements IHotNewsFragmentModel, XMLDataParse
     private HotNewsEntityPOJOCallBack mHotNewsEntityPOJOCallBack;
     private ListView mListView;
     private FragmentActivity mHomeActivity;
+    private boolean isCheckout = false;
 
 
     public HotNewsFragmentModel(FragmentActivity activity, ListView listView) {
@@ -45,25 +45,27 @@ public class HotNewsFragmentModel implements IHotNewsFragmentModel, XMLDataParse
     }
 
     @Override
-    public <T> List<HotNewsEntity> onShowDataOnM(FragmentActivity activity,ListView listView) {
+    public <T> List<HotNewsEntity> onShowDataOnM(FragmentActivity activity, ListView listView) {
         //监听回调，此处是监听document 对象并获得实体信息
-        XMLDataParseUtil.onInstance().setDocumentPOJOListener(this);
-        XMLDataParseUtil.onInstance().onDocumentPOJO(HOTNEWS_BASE_URL,activity,listView);
-        return null;
+//        XMLDataParseUtil.onInstance().setDocumentPOJOListener(this);
+//        XMLDataParseUtil.onInstance().onDocumentPOJO(HOTNEWS_BASE_URL, activity, listView);
+//        XMLDataParseUtil.onInstance().DocumentPOJO(HOTNEWS_BASE_URL);
+        for (Element element : XMLDataParseUtil.onInstance().DocumentPOJO(HOTNEWS_BASE_URL).getElementsByClass("item-top")) {
+            onSetHotNewsEntity(element);
+        }
+        return hotNewsEntities;
     }
 
 
     @Override
-    public List<HotNewsEntity> onDocumentPOJO(Document document,FragmentActivity activity,ListView listView) {
+    public List<HotNewsEntity> onDocumentPOJO(Document document, FragmentActivity activity, ListView listView) {
         Elements elements = document.getElementsByClass("item-top");
         for (Element element : elements) {
             onSetHotNewsEntity(element);
         }
-        mHotNewsEntityPOJOCallBack = new HotNewsFragment();
-
         if (mHotNewsEntityPOJOCallBack != null) {
             if (hotNewsEntities != null && hotNewsEntities.size() > 0) {
-                mHotNewsEntityPOJOCallBack.onHotNewsEntityPOJOSuccess(hotNewsEntities,activity, listView);
+                mHotNewsEntityPOJOCallBack.onHotNewsEntityPOJOSuccess(hotNewsEntities, activity, listView);
             } else
                 mHotNewsEntityPOJOCallBack.onHotNewsEntityPOJOFailed();
         }
@@ -87,9 +89,12 @@ public class HotNewsFragmentModel implements IHotNewsFragmentModel, XMLDataParse
     }
 
 
+    /**
+     * 设计欠缺 弃用
+     */
     public interface HotNewsEntityPOJOCallBack {
 
-        abstract void onHotNewsEntityPOJOSuccess(List<HotNewsEntity> hotNewsEntities, FragmentActivity homeActivity,ListView listView);
+        abstract void onHotNewsEntityPOJOSuccess(List<HotNewsEntity> hotNewsEntities, FragmentActivity homeActivity, ListView listView);
 
         abstract void onHotNewsEntityPOJOFailed();
     }

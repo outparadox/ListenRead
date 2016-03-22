@@ -33,12 +33,8 @@ public class HotNewsFragmentPresenter implements IHotNewsFragmentPresenter {
     }
 
     @Override
-    public <T> void onShowDataOnP(Activity activity,ListView listView) {
-        //先去Molde获得数据
-        mIHotNewsFragmentModel.onShowDataOnM(mHomeActivity,listView);
-        //获得了再把数据传回界面
-//        mIHotNewsFragmentVu.onShowData(); ...
-
+    public <T> void onShowDataOnP(Activity activity, ListView listView) {
+        mIHotNewsFragmentVu.onShowData(mIHotNewsFragmentModel.onShowDataOnM(mHomeActivity, listView));
     }
 
     @Override
