@@ -6,6 +6,8 @@ package com.luhuanju.listenread.utils;/*
  */
 
 import android.os.AsyncTask;
+import android.support.v4.app.FragmentActivity;
+import android.widget.ListView;
 
 import com.luhuanju.listenread.entity.HotNewsEntity;
 
@@ -41,7 +43,7 @@ public class XMLDataParseUtil {
     }
 
     public interface DocumentPOJOCallback {
-        List<HotNewsEntity> onDocumentPOJO(Document document);
+        List<HotNewsEntity> onDocumentPOJO(Document document,FragmentActivity activity,ListView listView);
 
     }
 
@@ -50,18 +52,22 @@ public class XMLDataParseUtil {
     }
 
 
-    public List<HotNewsEntity> onDocumentPOJO(String url) {
+    public List<HotNewsEntity> onDocumentPOJO(String url,FragmentActivity activity,ListView listView) {
 
-        new DocumentPOJOAsyncTask(url).execute();
+        new DocumentPOJOAsyncTask(url,activity,listView).execute();
 
         return null;
     }
 
     class DocumentPOJOAsyncTask extends AsyncTask<Void, Void, Document> {
         private String mUrl;
+        private FragmentActivity activity;
+        private ListView listView;
 
-        public DocumentPOJOAsyncTask(String url) {
+        public DocumentPOJOAsyncTask(String url,FragmentActivity activity,ListView listView) {
+            this.activity=activity;
             this.mUrl = url;
+            this.listView=listView;
 
         }
 
@@ -78,7 +84,7 @@ public class XMLDataParseUtil {
         @Override
         protected void onPostExecute(Document document) {
             if (document == null || mDocumentPOJOCallback == null) return;
-            mDocumentPOJOCallback.onDocumentPOJO(document);
+            mDocumentPOJOCallback.onDocumentPOJO(document,activity,listView);
 
         }
     }

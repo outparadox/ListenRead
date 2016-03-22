@@ -7,6 +7,7 @@ package com.luhuanju.listenread.presenters.impls;/*
 
 import android.app.Activity;
 import android.support.v4.app.FragmentActivity;
+import android.widget.ListView;
 
 import com.luhuanju.listenread.models.IHotNewsFragmentModel;
 import com.luhuanju.listenread.models.impls.HotNewsFragmentModel;
@@ -32,9 +33,9 @@ public class HotNewsFragmentPresenter implements IHotNewsFragmentPresenter {
     }
 
     @Override
-    public <T> void onShowDataOnP(Activity activity) {
+    public <T> void onShowDataOnP(Activity activity,ListView listView) {
         //先去Molde获得数据
-        mIHotNewsFragmentModel.onShowDataOnM(mHomeActivity);
+        mIHotNewsFragmentModel.onShowDataOnM(mHomeActivity,listView);
         //获得了再把数据传回界面
 //        mIHotNewsFragmentVu.onShowData(); ...
 

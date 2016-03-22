@@ -8,6 +8,7 @@ package com.luhuanju.listenread.uis.fragments;/*
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,22 +16,28 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.luhuanju.listenread.R;
+import com.luhuanju.listenread.entity.HotNewsEntity;
+import com.luhuanju.listenread.models.impls.HotNewsFragmentModel;
 import com.luhuanju.listenread.presenters.IHotNewsFragmentPresenter;
 import com.luhuanju.listenread.presenters.impls.HotNewsFragmentPresenter;
 import com.luhuanju.listenread.uis.IHotNewsFragmentVu;
 import com.tuesda.walker.circlerefresh.CircleRefreshLayout;
 
+import java.util.List;
+
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
-public class HotNewsFragment extends Fragment implements IHotNewsFragmentVu, CircleRefreshLayout.OnCircleRefreshListener {
+public class HotNewsFragment extends Fragment implements IHotNewsFragmentVu, CircleRefreshLayout.OnCircleRefreshListener, HotNewsFragmentModel.HotNewsEntityPOJOCallBack {
     @InjectView(R.id.list)
     ListView mList;
     CircleRefreshLayout mRefreshLayout;
 //    @InjectView(R.id.hotnews_recy)
 //    RecyclerView mShowDataRecy;
 
+    private String mData[];
 
+    private HotNewsFragmentModel mHotNewsFragmentModel = null;
     private IHotNewsFragmentPresenter mIHotNewsFragmentPresenter = null;
 
     @Override
@@ -45,33 +52,11 @@ public class HotNewsFragment extends Fragment implements IHotNewsFragmentVu, Cir
         view.findViewById(R.id.textView).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mIHotNewsFragmentPresenter.onShowDataOnP(getActivity());
+                mIHotNewsFragmentPresenter.onShowDataOnP(getActivity(), mList);
             }
         });
+
         initData(view);
-
-
-        String[] strs = {
-                "The",
-                "Canvas",
-                "class",
-                "holds",
-                "the",
-                "draw",
-                "calls",
-                ".",
-                "To",
-                "draw",
-                "something,",
-                "you",
-                "need",
-                "4 basic",
-                "components",
-                "Bitmap",
-        };
-
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, strs);
-        mList.setAdapter(adapter);
         return view;
     }
 
@@ -108,8 +93,31 @@ public class HotNewsFragment extends Fragment implements IHotNewsFragmentVu, Cir
     }
 
     private void initData(View view) {
+
         ButterKnife.inject(this, view);
+        //绕过了PRESENTER
+        mHotNewsFragmentModel = new HotNewsFragmentModel(getActivity(), mList);
+        mHotNewsFragmentModel.setHotNewsEntityPOJOListener(this);
+
         mIHotNewsFragmentPresenter = mIHotNewsFragmentPresenter != null ? mIHotNewsFragmentPresenter : new HotNewsFragmentPresenter(getActivity(), this);
-        mIHotNewsFragmentPresenter.onShowDataOnP(getActivity());
+        mIHotNewsFragmentPresenter.onShowDataOnP(getActivity(), mList);
+
+
+    }
+
+
+    @Override
+    public void onHotNewsEntityPOJOSuccess(List<HotNewsEntity> hotNewsEntities, FragmentActivity activity, ListView listView) {
+        mData = new String[hotNewsEntities.size()];
+        for (int m = 0; m < hotNewsEntities.size(); m++) {
+            mData[m] = hotNewsEntities.get(m).getTitle();
+        }
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(activity, android.R.layout.simple_list_item_1, mData);
+        listView.setAdapter(adapter);
+    }
+
+    @Override
+    public void onHotNewsEntityPOJOFailed() {
+
     }
 }

@@ -1,6 +1,8 @@
 package com.luhuanju.listenread.models;
 
 import android.app.Activity;
+import android.support.v4.app.FragmentActivity;
+import android.widget.ListView;
 
 import com.luhuanju.listenread.entity.HotNewsEntity;
 
@@ -13,5 +15,5 @@ public interface IHotNewsFragmentModel {
 
     public abstract <T> void onShowCarouseOnM(Activity activity);
 
-    public abstract <T> List<HotNewsEntity> onShowDataOnM(Activity activity);
+    public abstract <T> List<HotNewsEntity> onShowDataOnM(FragmentActivity activity,ListView listView);
 }
