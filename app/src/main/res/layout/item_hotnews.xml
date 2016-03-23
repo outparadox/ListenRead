@@ -1,0 +1,61 @@
+<RelativeLayout
+    android:id="@+id/rl_product_wrap"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/hotnews_picture_ima"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        app:riv_border_color="@color/white"
+        app:riv_corner_radius="1dp"
+        app:riv_oval="false"/>
+
+    <TextView
+        android:id="@+id/hotnews_title_tv"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_toLeftOf="@id/hotnews_picture_ima"
+        android:gravity="center_vertical"
+        android:maxLines="2"
+        android:text="商品名称"
+        android:textColor="#565A5C"
+        android:textSize="14sp"
+        android:textStyle="bold"/>
+
+    <Space
+        android:id="@+id/space"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:layout_below="@id/hotnews_title_tv"/>
+
+    <TextView
+        android:id="@+id/hotnews_time_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/hotnews_title_tv"
+        android:layout_marginLeft="20dp"
+        android:layout_toLeftOf="@id/hotnews_picture_ima"
+        android:text="销量:3456"
+        android:textColor="#A5A5A5"
+        android:textSize="10sp"/>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="15dp"
+        android:layout_below="@+id/hotnews_picture_ima"
+        android:background="@color/gray"/>
+
+
+</RelativeLayout>

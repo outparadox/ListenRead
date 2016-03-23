@@ -36,16 +36,16 @@
         android:layout_below="@+id/rely_test"
         app:AniBackColor="#ff0097cd">
 
-        <!--<android.support.v7.widget.RecyclerView-->
-        <!--android:id="@+id/hotnews_recy"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent"-->
-        <!--android:scrollbars="none"/>-->
-        <ListView
-            android:id="@+id/list"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#ffffffff"></ListView>
+        <android.support.v7.widget.RecyclerView
+        android:id="@+id/hotnews_recy"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"/>
+        <!--<ListView-->
+            <!--android:id="@+id/list"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:background="#ffffffff"></ListView>-->
 
 
 

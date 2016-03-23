@@ -7,7 +7,6 @@ package com.luhuanju.listenread.presenters.impls;/*
 
 import android.app.Activity;
 import android.support.v4.app.FragmentActivity;
-import android.widget.ListView;
 
 import com.luhuanju.listenread.models.IHotNewsFragmentModel;
 import com.luhuanju.listenread.models.impls.HotNewsFragmentModel;
@@ -29,12 +28,13 @@ public class HotNewsFragmentPresenter implements IHotNewsFragmentPresenter {
 
     @Override
     public <T> void onShowCarouseOnP(Activity activity) {
+        mIHotNewsFragmentVu.onShowCarouse(mIHotNewsFragmentModel.onShowCarouseOnM(mHomeActivity));
 
     }
 
     @Override
-    public <T> void onShowDataOnP(Activity activity, ListView listView) {
-        mIHotNewsFragmentVu.onShowData(mIHotNewsFragmentModel.onShowDataOnM(mHomeActivity, listView));
+    public <T> void onShowDataOnP(Activity activity) {
+        mIHotNewsFragmentVu.onShowData(mIHotNewsFragmentModel.onShowDataOnM(mHomeActivity));
     }
 
     @Override
