@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/luhuanju/Documents/ListenRead/app/build/intermediates/exploded-aar/com.joanzapata.iconify/android-iconify-ionicons/2.1.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="a5514b083127937e028bd1520082080997874620">
+        <dex dex="/Users/luhuanju/Documents/ListenRead/app/build/intermediates/pre-dexed/debug/classes-ba85ff5811ef665be2dba83ce3c8f22bad4d3871.jar" />
+    </item>
+    <item
+        jar="/Users/luhuanju/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/3.2.0/f7873a2ebde246a45c2a8d6f3247108b4c88a879/okhttp-3.2.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="f7873a2ebde246a45c2a8d6f3247108b4c88a879">
+        <dex dex="/Users/luhuanju/Documents/ListenRead/app/build/intermediates/pre-dexed/debug/okhttp-3.2.0-43a1de1fa4a4854b651184697b26a235671a199c.jar" />
+    </item>
+    <item
+        jar="/Users/luhuanju/.gradle/caches/modules-2/files-2.1/com.nineoldandroids/library/2.4.0/e9b63380f3a242dbdbf103a2355ad7e43bad17cb/library-2.4.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
+        <dex dex="/Users/luhuanju/Documents/ListenRead/app/build/intermediates/pre-dexed/debug/library-2.4.0-a5bfc3114ecfbab593ad4e46128a4a2852b8b4f3.jar" />
+    </item>
+    <item
+        jar="/Users/luhuanju/Documents/ListenRead/app/libs/jsoup-1.8.3.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="3a86e137575e4a45f5a9eec407f8135512e823a2">
+        <dex dex="/Users/luhuanju/Documents/ListenRead/app/build/intermediates/pre-dexed/debug/jsoup-1.8.3-b7f37b82ac329beda20d772567f0b2c1e81dc26c.jar" />
+    </item>
+    <item
+        jar="/Users/luhuanju/Documents/ListenRead/app/build/intermediates/exploded-aar/ListenRead/circlerefresh/unspecified/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="51310317066bbec1b011d50155769a10406ea712">
+        <dex dex="/Users/luhuanju/Documents/ListenRead/app/build/intermediates/pre-dexed/debug/classes-5b68f4f6caf325b68d9672725586293254318f5d.jar" />
+    </item>
+    <item
+        jar="/Users/luhuanju/Documents/ListenRead/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.1.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="a3ff3c506644c820eb2bdf06e8339f72be578551">
+        <dex dex="/Users/luhuanju/Documents/ListenRead/app/build/intermediates/pre-dexed/debug/classes-7658a14b6f8af95e1526ac35ec9cb1c045a16f6e.jar" />
+    </item>
+    <item
+        jar="/Users/luhuanju/.gradle/caches/modules-2/files-2.1/com.squareup.picasso/picasso/2.5.2/7446d06ec8d4f7ffcc53f1da37c95f200dcb9387/picasso-2.5.2.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
+        <dex dex="/Users/luhuanju/Documents/ListenRead/app/build/intermediates/pre-dexed/debug/picasso-2.5.2-5ecb07aa85c266520d3a782afcbee8a47637706b.jar" />
+    </item>
+    <item
+        jar="/Users/luhuanju/Documents/ListenRead/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/21.0.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="efeda77c808750cb670ee9c48d8a1835d89dbcb2">
+        <dex dex="/Users/luhuanju/Documents/ListenRead/app/build/intermediates/pre-dexed/debug/classes-34217c0f02f73d0c89285c646110f9e04d6693a9.jar" />
+    </item>
+    <item
+        jar="/Users/luhuanju/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.6.0/98476622f10715998eacf9240d6b479f12c66143/okio-1.6.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="98476622f10715998eacf9240d6b479f12c66143">
+        <dex dex="/Users/luhuanju/Documents/ListenRead/app/build/intermediates/pre-dexed/debug/okio-1.6.0-015b2fd413ccf86eb7a199894e9d427d1967670e.jar" />
+    </item>
+    <item
+        jar="/Users/luhuanju/Documents/ListenRead/app/build/intermediates/exploded-aar/com.melnykov/floatingactionbutton/1.1.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="ee9ae2b87d57a33a7381c75d54db12bdf2995656">
+        <dex dex="/Users/luhuanju/Documents/ListenRead/app/build/intermediates/pre-dexed/debug/classes-75dae19d7b01f5521b8d41d71d227e3f02f6b730.jar" />
+    </item>
+    <item
+        jar="/Users/luhuanju/Documents/ListenRead/app/build/intermediates/exploded-aar/com.joanzapata.iconify/android-iconify/2.1.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="3e9db26c95288c1954e7de86d9e94e1259fb608b">
+        <dex dex="/Users/luhuanju/Documents/ListenRead/app/build/intermediates/pre-dexed/debug/classes-9133995474199c4dd8fd8b162d42e0795c3837fc.jar" />
+    </item>
+    <item
+        jar="/Users/luhuanju/Documents/ListenRead/app/build/intermediates/exploded-aar/ListenRead/library/unspecified/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="a3357e2c2e5d55d4a9bc3c47145398d1684ff0c1">
+        <dex dex="/Users/luhuanju/Documents/ListenRead/app/build/intermediates/pre-dexed/debug/classes-6af2205dbd306e6fa06c7a11c7f8504e3accc847.jar" />
+    </item>
+    <item
+        jar="/Users/luhuanju/Documents/ListenRead/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.1/jars/libs/internal_impl-22.2.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="c471eaaba13ff64f6e0383d1c30a9cdc9a97efeb">
+        <dex dex="/Users/luhuanju/Documents/ListenRead/app/build/intermediates/pre-dexed/debug/internal_impl-22.2.1-ff11e33ff96345389bef323041c98e109cf5cfde.jar" />
+    </item>
+    <item
+        jar="/Users/luhuanju/.gradle/caches/modules-2/files-2.1/com.jakewharton/butterknife/6.1.0/63735f48b82bcd24cdd33821342428252eb1ca5a/butterknife-6.1.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="63735f48b82bcd24cdd33821342428252eb1ca5a">
+        <dex dex="/Users/luhuanju/Documents/ListenRead/app/build/intermediates/pre-dexed/debug/butterknife-6.1.0-e9088ed35d811cb069f084e342de4e3d40c32802.jar" />
+    </item>
+    <item
+        jar="/Users/luhuanju/Desktop/LJ_DeverLopMent/studio/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/22.2.1/support-annotations-22.2.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="61a0ff5c29295ec56d7e0bd3d25d95dbf71b4b2b">
+        <dex dex="/Users/luhuanju/Documents/ListenRead/app/build/intermediates/pre-dexed/debug/support-annotations-22.2.1-a2b36b223e74c2e09cc55fafd809590690b81ba2.jar" />
+    </item>
+    <item
+        jar="/Users/luhuanju/Documents/ListenRead/app/build/intermediates/exploded-aar/com.makeramen/roundedimageview/2.1.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="2e76a4b693db19fdde80d30123204d0ed2454ea9">
+        <dex dex="/Users/luhuanju/Documents/ListenRead/app/build/intermediates/pre-dexed/debug/classes-fc811a27153bbbe7e492d411da8e9a7dc1f9cc26.jar" />
+    </item>
+    <item
+        jar="/Users/luhuanju/Documents/ListenRead/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="f8efd0096475e0daf054267b61544e10dc776503">
+        <dex dex="/Users/luhuanju/Documents/ListenRead/app/build/intermediates/pre-dexed/debug/classes-e421eba51c363e74ecc66ed5af53ea3e3502864c.jar" />
+    </item>
+
+</items>

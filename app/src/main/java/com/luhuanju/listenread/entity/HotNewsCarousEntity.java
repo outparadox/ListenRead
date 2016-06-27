@@ -8,30 +8,49 @@ package com.luhuanju.listenread.entity;/*
 public class HotNewsCarousEntity {
 
     private String url;
-    private String imgsrc;
+    private String thumbnailSrc;
+    private String hdPictureSrc;
+    private String content;
     private String title;
 
-    public void setImgsrc(String imgsrc) {
-        this.imgsrc = imgsrc;
-    }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setHdPictureSrc(String hdPictureSrc) {
+        this.hdPictureSrc = hdPictureSrc;
     }
 
     public void setUrl(String url) {
         this.url = url;
     }
 
-    public String getTitle() {
-        return title;
+    public void setThumbnailSrc(String thumbnailSrc) {
+        this.thumbnailSrc = thumbnailSrc;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String getUrl() {
         return url;
     }
 
-    public String getImgsrc() {
-        return imgsrc;
+    public String getThumbnailSrc() {
+        return thumbnailSrc;
+    }
+
+    public String getHdPictureSrc() {
+        return hdPictureSrc;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public String getTitle() {
+        return title;
     }
 }

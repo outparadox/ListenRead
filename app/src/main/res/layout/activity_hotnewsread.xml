@@ -1,0 +1,87 @@
+<RelativeLayout
+    android:id="@+id/aa"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            >
+
+            <RelativeLayout
+                android:id="@+id/test_rlly"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/theme_color"
+                android:minHeight="100dp"
+
+                >
+
+                <TextView
+                    android:id="@+id/hotnewsread_title_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:text="我是新闻标题"
+                    android:textColor="@color/white"
+                    android:textSize="25sp"
+                    >
+                </TextView>
+
+                <TextView
+                    android:id="@+id/hotnewsread_source_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/hotnewsread_title_tv"
+                    android:layout_marginLeft="10dp"
+                    android:text="我是新闻标题"
+                    android:textColor="@color/white"
+                    android:textSize="13sp"
+                    >
+                </TextView>
+
+
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/hotnewsread_picture_ima"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/test_rlly"
+                android:layout_margin="15dp"
+                android:minHeight="200dp"
+
+                />
+
+            <TextView
+                android:id="@+id/hotnewsread_content_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/hotnewsread_picture_ima"
+                android:layout_margin="15dp"
+                android:minHeight="200dp"
+                android:text="我是文字内容"
+                android:textColor="@color/content_color"
+
+
+                >
+            </TextView>
+
+
+        </RelativeLayout>
+
+
+    </ScrollView>
+
+
+</RelativeLayout>

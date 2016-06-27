@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="android-iconify-ionicons-2.1.1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.joanzapata.iconify/android-iconify-ionicons/2.1.1/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.joanzapata.iconify/android-iconify-ionicons/2.1.1/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.joanzapata.iconify/android-iconify-ionicons/2.1.1/a8e8e1ce4a2e0d1d99b7d3dd3e0556278577b843/android-iconify-ionicons-2.1.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

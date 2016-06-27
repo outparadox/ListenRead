@@ -3,10 +3,13 @@ package com.luhuanju.listenread.models.impls;/*
  * Copyright (C) 2016，上海宅米贸易有限公司， All rights reserved.
  * —————————————————————–
  * Author: luhuanju
+ *
+ *
  */
 
 import android.app.Activity;
 import android.support.v4.app.FragmentActivity;
+import android.util.Log;
 import android.widget.ListView;
 
 import com.luhuanju.listenread.entity.HotNewsCarousEntity;
@@ -24,10 +27,11 @@ import java.util.List;
 public class HotNewsFragmentModel implements IHotNewsFragmentModel, XMLDataParseUtil.DocumentPOJOCallback {
     private static final String TAG = HotNewsFragmentModel.class.getName().toString();
     private static final String HOTNEWS_BASE_URL = "http://news.163.com/shehui/";
-    private static final String HOTNEWS_CAROUSE_BASE_URL = "http://www.people.com.cn/";//人民网
+    private static final String HOTNEWS_CAROUSE_BASE_URL = "http://cnews.chinadaily.com.cn/";//中国日报网
     private List<HotNewsEntity> hotNewsEntities = new ArrayList<>();
     private List<HotNewsCarousEntity> mHotNewsCarousEntity = new ArrayList<>();
     private HotNewsEntityPOJOCallBack mHotNewsEntityPOJOCallBack;
+
 
 
     public HotNewsFragmentModel() {
@@ -36,7 +40,7 @@ public class HotNewsFragmentModel implements IHotNewsFragmentModel, XMLDataParse
 
     @Override
     public <T> List<HotNewsCarousEntity> onShowCarouseOnM(Activity activity) {
-        for (Element element : XMLDataParseUtil.onInstance().DocumentPOJO(HOTNEWS_CAROUSE_BASE_URL).getElementsByClass("focus").first().getElementsByTag("li")) {
+        for (Element element : XMLDataParseUtil.onInstance().DocumentPOJO(HOTNEWS_CAROUSE_BASE_URL).getElementsByTag("picarea").first().getElementsByTag("image")) {
             onSetHotNewsCurouseEntity(element);
         }
         return mHotNewsCarousEntity;
@@ -52,7 +56,7 @@ public class HotNewsFragmentModel implements IHotNewsFragmentModel, XMLDataParse
         for (Element element : XMLDataParseUtil.onInstance().DocumentPOJO(HOTNEWS_BASE_URL).getElementsByClass("item-top")) {
             onSetHotNewsEntity(element);
         }
-        return hotNewsEntities;
+        return null;
     }
 
 
@@ -92,9 +96,18 @@ public class HotNewsFragmentModel implements IHotNewsFragmentModel, XMLDataParse
      */
     private void onSetHotNewsCurouseEntity(Element element) {
         HotNewsCarousEntity hotNewsCarousEntity = new HotNewsCarousEntity();
-        hotNewsCarousEntity.setTitle(element.getElementsByTag("img").attr("alt"));
-        hotNewsCarousEntity.setImgsrc("http://www.people.com.cn" + element.getElementsByTag("img").attr("src"));
-        hotNewsCarousEntity.setUrl(element.getElementsByTag("a").first().attr("href"));
+//        hotNewsCarousEntity.setTitle(element.getElementsByTag("p").text());
+        Log.d("TAG","："+element.getElementsByClass("word_cont").text());
+//        HotNewsCarousEntity hotNewsCarousEntity = new HotNewsCarousEntity();
+//        hotNewsCarousEntity.setTitle(element.getElementsByTag("img").attr("alt"));
+//        hotNewsCarousEntity.setThumbnailSrc("http://www.people.com.cn" + element.getElementsByTag("img").attr("src"));
+//        hotNewsCarousEntity.setUrl(element.getElementsByTag("a").first().attr("href"));
+
+
+        //依据地址获取具体内容以及大图
+//        XMLDataParseUtil.onInstance().DocumentPOJO(hotNewsCarousEntity.getUrl())
+
+
         mHotNewsCarousEntity.add(hotNewsCarousEntity);
     }
 

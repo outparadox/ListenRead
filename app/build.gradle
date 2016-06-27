@@ -17,7 +17,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+
+
 }
+
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
@@ -25,5 +29,11 @@ dependencies {
     compile 'com.melnykov:floatingactionbutton:1.1.0'
     //HotNews下拉刷新
     compile project(':circlerefresh')
-    compile 'com.joanzapata.iconify:android-iconify-ionicons:2.1.1' // (v2.0.1)
+    compile 'com.joanzapata.iconify:android-iconify-ionicons:2.1.1'
+    compile 'com.squareup.okhttp3:okhttp:3.2.0'
+    compile 'com.makeramen:roundedimageview:2.1.1'
+    // (v2.0.1)
+    compile files('libs/jsoup-1.8.3.jar')
+
+    compile project(':library')
 }

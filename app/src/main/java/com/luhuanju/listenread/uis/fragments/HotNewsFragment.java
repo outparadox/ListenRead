@@ -14,10 +14,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.daimajia.slider.library.Animations.DescriptionAnimation;
+import com.daimajia.slider.library.Indicators.PagerIndicator;
+import com.daimajia.slider.library.SliderLayout;
+import com.daimajia.slider.library.SliderTypes.BaseSliderView;
+import com.daimajia.slider.library.SliderTypes.TextSliderView;
+import com.daimajia.slider.library.Tricks.ViewPagerEx;
 import com.luhuanju.listenread.R;
 import com.luhuanju.listenread.entity.HotNewsCarousEntity;
 import com.luhuanju.listenread.entity.HotNewsEntity;
-import com.luhuanju.listenread.models.impls.HotNewsFragmentModel;
 import com.luhuanju.listenread.presenters.IHotNewsFragmentPresenter;
 import com.luhuanju.listenread.presenters.impls.HotNewsFragmentPresenter;
 import com.luhuanju.listenread.uis.IHotNewsFragmentVu;
@@ -30,18 +35,21 @@ import java.util.List;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
-public class HotNewsFragment extends Fragment implements IHotNewsFragmentVu, CircleRefreshLayout.OnCircleRefreshListener {
-    CircleRefreshLayout mRefreshLayout;
+public class HotNewsFragment extends Fragment implements IHotNewsFragmentVu, CircleRefreshLayout.OnCircleRefreshListener, BaseSliderView.OnSliderClickListener, ViewPagerEx.OnPageChangeListener {
+
     @InjectView(R.id.hotnews_recy)
     RecyclerView mShowDataRecy;
+    @InjectView(R.id.hotnews_slider)
+    SliderLayout mCarouseSlider;
+
 
     private String mData[];
-
-    private HotNewsFragmentModel mHotNewsFragmentModel = null;
+    private CircleRefreshLayout mRefreshLayout;
     private IHotNewsFragmentPresenter mIHotNewsFragmentPresenter = null;
     private HotNewsDataAdapter mHotNewsDataAdapter = null;
     private List<HotNewsEntity> mHotNewsEntities = new ArrayList<>();
     private LinearLayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -65,21 +73,53 @@ public class HotNewsFragment extends Fragment implements IHotNewsFragmentVu, Cir
 
     @Override
     public void onShowCarouse(List<HotNewsCarousEntity> hotNewsCarousEntities) {
+        if (mCarouseSlider.getTag() == null) {
+            for (HotNewsCarousEntity hotNewsCarousEntity : hotNewsCarousEntities) {
+                TextSliderView textSliderView = new TextSliderView(getActivity());
+                textSliderView
+                        .description(hotNewsCarousEntity.getTitle())
+//                        .image(hotNewsCarousEntity.getImgsrc())
+                        .setScaleType(BaseSliderView.ScaleType.Fit)
+                        .setOnSliderClickListener(this);
+                textSliderView.bundle(new Bundle());
+                textSliderView.getBundle()
+                        .putString("extra", hotNewsCarousEntity.getTitle());
+
+                mCarouseSlider.addSlider(textSliderView);
+            }
+            mCarouseSlider.setIndicatorVisibility(PagerIndicator.IndicatorVisibility.Invisible);
+            mCarouseSlider.setPresetTransformer(SliderLayout.Transformer.Accordion);
+            mCarouseSlider.setCustomAnimation(new DescriptionAnimation());
+            mCarouseSlider.setDuration(4000);
+            mCarouseSlider.addOnPageChangeListener(this);
+            mCarouseSlider.setTag(hotNewsCarousEntities.size());
+
+        }
+
 
     }
 
     @Override
     public void onShowData(List<HotNewsEntity> hotNewsEntities) {
-        mData = new String[hotNewsEntities.size()];
-        for (int m = 0; m < hotNewsEntities.size(); m++) {
-            mData[m] = hotNewsEntities.get(m).getTitle();
+        if (hotNewsEntities != null) {
+            mData = new String[hotNewsEntities.size()];
+            for (int m = 0; m < hotNewsEntities.size(); m++) {
+                mData[m] = hotNewsEntities.get(m).getTitle();
+            }
+            mHotNewsEntities.addAll(hotNewsEntities);
+            mHotNewsDataAdapter.refreshData(mHotNewsEntities);
         }
-        mHotNewsEntities.addAll(hotNewsEntities);
-        mHotNewsDataAdapter.refreshData(mHotNewsEntities);
+    }
+
+    @Override
+    public void onStop() {
+        mCarouseSlider.stopAutoCycle();
+        super.onStop();
     }
 
     @Override
     public void onDestroyView() {
+
         super.onDestroyView();
     }
 
@@ -102,12 +142,7 @@ public class HotNewsFragment extends Fragment implements IHotNewsFragmentVu, Cir
     private void initViewWidget(View view) {
 
         mRefreshLayout = (CircleRefreshLayout) view.findViewById(R.id.hotnews_refresh);
-        view.findViewById(R.id.textView).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                mIHotNewsFragmentPresenter.onShowDataOnP(getActivity());
-            }
-        });
+
 
     }
 
@@ -127,6 +162,26 @@ public class HotNewsFragment extends Fragment implements IHotNewsFragmentVu, Cir
         mIHotNewsFragmentPresenter.onShowCarouseOnP(getActivity());
         mIHotNewsFragmentPresenter.onShowDataOnP(getActivity());
 
+
+    }
+
+    @Override
+    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+    }
+
+    @Override
+    public void onPageSelected(int position) {
+
+    }
+
+    @Override
+    public void onPageScrollStateChanged(int state) {
+
+    }
+
+    @Override
+    public void onSliderClick(BaseSliderView slider) {
 
     }
 }

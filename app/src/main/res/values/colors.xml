@@ -3,8 +3,11 @@
     <color name="gray">#E5E5E5</color>
     <color name="white">#ffffff</color>
     <color name="black">#080808</color>
+    <color name="orange">#FFA54F</color>
+    <color name="theme_color">#FF6347</color>
 
 
     //hotnews
     <color name="remark_color">#6E7B8B</color>
+    <color name="content_color">#757575</color>
 </resources>
