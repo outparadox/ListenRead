@@ -1,4 +1,4 @@
-package com.luhuanju.listenread.models.impls;/*
+package com.luhuanju.listenread.remote.impls;/*
  * —————————————————————–
  * —————————————————————–
  * Author: luhuanju
@@ -10,7 +10,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 
 import com.luhuanju.listenread.R;
-import com.luhuanju.listenread.models.IHomeActivityModel;
+import com.luhuanju.listenread.remote.IHomeActivityModel;
 import com.luhuanju.listenread.uis.activitys.HomeActivity;
 import com.luhuanju.listenread.uis.fragments.HotNewsFragment;
 import com.luhuanju.listenread.uis.fragments.SettingsFragment;

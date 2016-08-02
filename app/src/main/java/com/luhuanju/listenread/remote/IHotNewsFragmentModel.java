@@ -1,4 +1,4 @@
-package com.luhuanju.listenread.models;
+package com.luhuanju.listenread.remote;
 
 import android.app.Activity;
 import android.support.v4.app.FragmentActivity;

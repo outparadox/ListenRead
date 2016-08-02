@@ -5,7 +5,7 @@ package com.luhuanju.listenread.presenters.impls;/*
  * Author: luhuanju
  */
 
-import com.luhuanju.listenread.models.impls.HomeActivityModel;
+import com.luhuanju.listenread.remote.impls.HomeActivityModel;
 import com.luhuanju.listenread.presenters.IHomeActivtyPresenter;
 import com.luhuanju.listenread.uis.IHomeActivityVu;
 import com.luhuanju.listenread.uis.activitys.HomeActivity;

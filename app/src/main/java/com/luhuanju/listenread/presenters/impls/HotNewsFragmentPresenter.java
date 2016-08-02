@@ -8,8 +8,8 @@ package com.luhuanju.listenread.presenters.impls;/*
 import android.app.Activity;
 import android.support.v4.app.FragmentActivity;
 
-import com.luhuanju.listenread.models.IHotNewsFragmentModel;
-import com.luhuanju.listenread.models.impls.HotNewsFragmentModel;
+import com.luhuanju.listenread.remote.IHotNewsFragmentModel;
+import com.luhuanju.listenread.remote.impls.HotNewsFragmentModel;
 import com.luhuanju.listenread.presenters.IHotNewsFragmentPresenter;
 import com.luhuanju.listenread.uis.IHotNewsFragmentVu;
 

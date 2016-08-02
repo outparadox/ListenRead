@@ -1,4 +1,4 @@
-package com.luhuanju.listenread.presenters;/*
+package com.luhuanju.listenread.utils.base;/*
  * —————————————————————–
  * Copyright (C) 2016，上海宅米贸易有限公司， All rights reserved.
  * —————————————————————–

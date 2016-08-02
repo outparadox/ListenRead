@@ -1,4 +1,4 @@
-package com.luhuanju.listenread.models.impls;/*
+package com.luhuanju.listenread.remote.impls;/*
  * —————————————————————–
  * Copyright (C) 2016，上海宅米贸易有限公司， All rights reserved.
  * —————————————————————–
@@ -14,7 +14,7 @@ import android.widget.ListView;
 
 import com.luhuanju.listenread.entity.HotNewsCarousEntity;
 import com.luhuanju.listenread.entity.HotNewsEntity;
-import com.luhuanju.listenread.models.IHotNewsFragmentModel;
+import com.luhuanju.listenread.remote.IHotNewsFragmentModel;
 import com.luhuanju.listenread.utils.XMLDataParseUtil;
 
 import org.jsoup.nodes.Document;
@@ -102,8 +102,6 @@ public class HotNewsFragmentModel implements IHotNewsFragmentModel, XMLDataParse
 //        hotNewsCarousEntity.setTitle(element.getElementsByTag("img").attr("alt"));
 //        hotNewsCarousEntity.setThumbnailSrc("http://www.people.com.cn" + element.getElementsByTag("img").attr("src"));
 //        hotNewsCarousEntity.setUrl(element.getElementsByTag("a").first().attr("href"));
-
-
         //依据地址获取具体内容以及大图
 //        XMLDataParseUtil.onInstance().DocumentPOJO(hotNewsCarousEntity.getUrl())
 
