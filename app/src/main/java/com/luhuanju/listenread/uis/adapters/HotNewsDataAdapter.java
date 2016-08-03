@@ -19,8 +19,8 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 
 public class HotNewsDataAdapter extends RecyclerView.Adapter<HotNewsDataAdapter.HotNewsDataViewHolder> {
 
@@ -63,17 +63,17 @@ public class HotNewsDataAdapter extends RecyclerView.Adapter<HotNewsDataAdapter.
     }
 
     class HotNewsDataViewHolder extends RecyclerView.ViewHolder {
-        @InjectView(R.id.hotnews_title_tv)
+        @BindView(R.id.hotnews_title_tv)
         TextView mHotNewsTitleTv;
-        @InjectView(R.id.hotnews_time_tv)
+        @BindView(R.id.hotnews_time_tv)
         TextView mHotNewsTimeTv;
-        @InjectView(R.id.hotnews_picture_ima)
+        @BindView(R.id.hotnews_picture_ima)
         RoundedImageView mHotNewsPictureIma;
 
 
         public HotNewsDataViewHolder(View itemView) {
             super(itemView);
-            ButterKnife.inject(this, itemView);
+            ButterKnife.bind(this, itemView);
         }
     }
 }

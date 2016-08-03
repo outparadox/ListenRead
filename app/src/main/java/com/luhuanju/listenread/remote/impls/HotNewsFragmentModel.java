@@ -7,7 +7,6 @@ package com.luhuanju.listenread.remote.impls;/*
  *
  */
 
-import android.app.Activity;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.widget.ListView;
@@ -32,30 +31,29 @@ public class HotNewsFragmentModel implements IHotNewsFragmentModel, XMLDataParse
     private List<HotNewsCarousEntity> mHotNewsCarousEntity = new ArrayList<>();
     private HotNewsEntityPOJOCallBack mHotNewsEntityPOJOCallBack;
 
-
-
     public HotNewsFragmentModel() {
     }
 
 
     @Override
-    public <T> List<HotNewsCarousEntity> onShowCarouseOnM(Activity activity) {
-        for (Element element : XMLDataParseUtil.onInstance().DocumentPOJO(HOTNEWS_CAROUSE_BASE_URL).getElementsByTag("picarea").first().getElementsByTag("image")) {
-            onSetHotNewsCurouseEntity(element);
-        }
-        return mHotNewsCarousEntity;
+    public <T> List<HotNewsCarousEntity> onShowCarouseOnM() {
+//        for (Element element : XMLDataParseUtil.onInstance().DocumentPOJO(HOTNEWS_CAROUSE_BASE_URL).getElementsByTag("picarea").first().getElementsByTag("image")) {
+//            onSetHotNewsCurouseEntity(element);
+//        }
+//        return mHotNewsCarousEntity;
+        return null;
     }
 
     @Override
-    public <T> List<HotNewsEntity> onShowDataOnM(FragmentActivity activity) {
+    public <T> List<HotNewsEntity> onShowDataOnM() {
         //监听回调，此处是监听document 对象并获得实体信息
 //        XMLDataParseUtil.onInstance().setDocumentPOJOListener(this);
 //        XMLDataParseUtil.onInstance().onDocumentPOJO(HOTNEWS_BASE_URL, activity, listView);
 //        XMLDataParseUtil.onInstance().DocumentPOJO(HOTNEWS_BASE_URL);
 
-        for (Element element : XMLDataParseUtil.onInstance().DocumentPOJO(HOTNEWS_BASE_URL).getElementsByClass("item-top")) {
-            onSetHotNewsEntity(element);
-        }
+//        for (Element element : XMLDataParseUtil.onInstance().DocumentPOJO(HOTNEWS_BASE_URL).getElementsByClass("item-top")) {
+//            onSetHotNewsEntity(element);
+//        }
         return null;
     }
 

@@ -12,20 +12,21 @@ import android.widget.TextView;
 
 import com.luhuanju.listenread.R;
 import com.luhuanju.listenread.contracts.IHomeActivityContract;
-import com.luhuanju.listenread.presenters.impls.HomeActivityPresenter;
-import com.luhuanju.listenread.utils.AppActivity;
+import com.luhuanju.listenread.presenters.HomeActivityPresenter;
+import com.luhuanju.listenread.utils.views.FontHelper;
 
-import butterknife.InjectView;
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class HomeActivity extends FragmentActivity implements IHomeActivityContract.IHomeActivityVu {
-    @InjectView(R.id.tv_hotnews)
+    @BindView(R.id.tv_hotnews)
     TextView mTvHotNews;
-    @InjectView(R.id.tv_transceiver)
+    @BindView(R.id.tv_transceiver)
     TextView mTvTransceiver;
-    @InjectView(R.id.tv_weekly)
+    @BindView(R.id.tv_weekly)
     TextView mTvWeekly;
-    @InjectView(R.id.tv_setting)
+    @BindView(R.id.tv_setting)
     TextView mTvSetting;
     private IHomeActivityContract.IHomeActivityPresenter mHomeActivityPresenter = null;
     private HomeActivityCallBack mHomeActivityCallBack = null;
@@ -61,7 +62,7 @@ public class HomeActivity extends FragmentActivity implements IHomeActivityContr
 
     @Override
     public <T> void onSetPresenter(T t) {
-
+        this.mHomeActivityPresenter = (HomeActivityPresenter) t;
     }
 
 
@@ -82,6 +83,7 @@ public class HomeActivity extends FragmentActivity implements IHomeActivityContr
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
         initData(savedInstanceState);
 
     }
@@ -110,9 +112,9 @@ public class HomeActivity extends FragmentActivity implements IHomeActivityContr
     }
 
     private void initData(Bundle savedInstanceState) {
-        mHomeActivityPresenter = new HomeActivityPresenter(this, this);
+        ButterKnife.bind(this);
+        new HomeActivityPresenter(this, this);
         mHomeActivityPresenter.getObjectComponentOnP(this);
-        AppActivity.initInject(this);
         FontHelper.applyIconFont(this, mTvHotNews, mTvTransceiver, mTvWeekly, mTvSetting);
         if (savedInstanceState != null) {
             mHomeActivityPresenter.onResumeUiOnP(savedInstanceState);

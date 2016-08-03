@@ -6,7 +6,6 @@ package com.luhuanju.listenread.presenters;/*
  */
 
 import android.app.Activity;
-import android.support.v4.app.FragmentActivity;
 
 import com.luhuanju.listenread.contracts.IHotNewsFragmenrContract;
 import com.luhuanju.listenread.remote.IHotNewsFragmentModel;
@@ -14,26 +13,25 @@ import com.luhuanju.listenread.remote.impls.HotNewsFragmentModel;
 
 public class HotNewsFragmentPresenter implements IHotNewsFragmenrContract.IHomeNewsPresenter {
     private IHotNewsFragmentModel mIHotNewsFragmentModel = null;
-    private FragmentActivity mHomeActivity = null;
     private IHotNewsFragmenrContract.IHotNewstVu mIHotNewsFragmentVu;
 
 
-    public HotNewsFragmentPresenter(FragmentActivity activity, IHotNewsFragmenrContract.IHotNewstVu hotNewsFragmentVu) {
+    public HotNewsFragmentPresenter(IHotNewsFragmenrContract.IHotNewstVu hotNewsFragmentVu) {
         mIHotNewsFragmentModel = mIHotNewsFragmentModel != null ? mIHotNewsFragmentModel : new HotNewsFragmentModel();
-        mHomeActivity = mHomeActivity != null ? mHomeActivity : activity;
         mIHotNewsFragmentVu = mIHotNewsFragmentVu != null ? mIHotNewsFragmentVu : hotNewsFragmentVu;
+        mIHotNewsFragmentVu.onSetPresenter(this);
     }
 
 
     @Override
     public <T> void onShowCarouseOnP(Activity activity) {
-        mIHotNewsFragmentVu.onShowCarouse(mIHotNewsFragmentModel.onShowCarouseOnM(mHomeActivity));
+        mIHotNewsFragmentVu.onShowCarouse(mIHotNewsFragmentModel.onShowCarouseOnM());
 
     }
 
     @Override
     public <T> void onShowDataOnP(Activity activity) {
-        mIHotNewsFragmentVu.onShowData(mIHotNewsFragmentModel.onShowDataOnM(mHomeActivity));
+        mIHotNewsFragmentVu.onShowData(mIHotNewsFragmentModel.onShowDataOnM());
     }
 
 

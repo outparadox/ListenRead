@@ -18,7 +18,7 @@ public class HomeActivityPresenter implements IHomeActivityContract.IHomeActivit
         this.mHomeActivityVu = mHomeActivityVu != null ? mHomeActivityVu : homeActivityVu;
         this.mHomeAvtivityContext = mHomeAvtivityContext != null ? mHomeAvtivityContext : activity;
         mHomeActivityModel = mHomeActivityModel != null ? mHomeActivityModel : new HomeActivityModel();
-
+        mHomeActivityVu.onSetPresenter(this);
     }
 
 

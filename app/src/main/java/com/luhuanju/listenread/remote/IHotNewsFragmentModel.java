@@ -1,8 +1,5 @@
 package com.luhuanju.listenread.remote;
 
-import android.app.Activity;
-import android.support.v4.app.FragmentActivity;
-
 import com.luhuanju.listenread.entity.HotNewsCarousEntity;
 import com.luhuanju.listenread.entity.HotNewsEntity;
 
@@ -13,7 +10,7 @@ import java.util.List;
  */
 public interface IHotNewsFragmentModel {
 
-    public abstract <T> List<HotNewsCarousEntity> onShowCarouseOnM(Activity activity);
+    public abstract <T> List<HotNewsCarousEntity> onShowCarouseOnM();
 
-    public abstract <T> List<HotNewsEntity> onShowDataOnM(FragmentActivity activity);
+    public abstract <T> List<HotNewsEntity> onShowDataOnM();
 }

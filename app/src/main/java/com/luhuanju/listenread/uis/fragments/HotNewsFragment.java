@@ -24,27 +24,27 @@ import com.luhuanju.listenread.R;
 import com.luhuanju.listenread.contracts.IHotNewsFragmenrContract;
 import com.luhuanju.listenread.entity.HotNewsCarousEntity;
 import com.luhuanju.listenread.entity.HotNewsEntity;
-import com.luhuanju.listenread.presenters.impls.HotNewsFragmentPresenter;
+import com.luhuanju.listenread.presenters.HotNewsFragmentPresenter;
 import com.luhuanju.listenread.uis.adapters.HotNewsDataAdapter;
 import com.tuesda.walker.circlerefresh.CircleRefreshLayout;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 
 public class HotNewsFragment extends Fragment implements IHotNewsFragmenrContract.IHotNewstVu, CircleRefreshLayout.OnCircleRefreshListener, BaseSliderView.OnSliderClickListener, ViewPagerEx.OnPageChangeListener {
 
-    @InjectView(R.id.hotnews_recy)
+    @BindView(R.id.hotnews_recy)
     RecyclerView mShowDataRecy;
-    @InjectView(R.id.hotnews_slider)
+    @BindView(R.id.hotnews_slider)
     SliderLayout mCarouseSlider;
 
 
     private String mData[];
     private CircleRefreshLayout mRefreshLayout;
-    private IHotNewsFragmentPresenter mIHotNewsFragmentPresenter = null;
+    private IHotNewsFragmenrContract.IHomeNewsPresenter mIHotNewsFragmentPresenter = null;
     private HotNewsDataAdapter mHotNewsDataAdapter = null;
     private List<HotNewsEntity> mHotNewsEntities = new ArrayList<>();
     private LinearLayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
@@ -72,6 +72,7 @@ public class HotNewsFragment extends Fragment implements IHotNewsFragmenrContrac
 
     @Override
     public void onShowCarouse(List<HotNewsCarousEntity> hotNewsCarousEntities) {
+        if(hotNewsCarousEntities==null) return;
         if (mCarouseSlider.getTag() == null) {
             for (HotNewsCarousEntity hotNewsCarousEntity : hotNewsCarousEntities) {
                 TextSliderView textSliderView = new TextSliderView(getActivity());
@@ -92,7 +93,6 @@ public class HotNewsFragment extends Fragment implements IHotNewsFragmenrContrac
             mCarouseSlider.setDuration(4000);
             mCarouseSlider.addOnPageChangeListener(this);
             mCarouseSlider.setTag(hotNewsCarousEntities.size());
-
         }
 
 
@@ -151,13 +151,11 @@ public class HotNewsFragment extends Fragment implements IHotNewsFragmenrContrac
      * @param view
      */
     private void initData(View view) {
-
-        ButterKnife.inject(this, view);
+        ButterKnife.bind(this, view);
+        new HotNewsFragmentPresenter(this);
         mHotNewsDataAdapter = new HotNewsDataAdapter(getActivity(), mHotNewsEntities);
         mShowDataRecy.setAdapter(mHotNewsDataAdapter);
         mShowDataRecy.setLayoutManager(mLayoutManager);
-
-        mIHotNewsFragmentPresenter = mIHotNewsFragmentPresenter != null ? mIHotNewsFragmentPresenter : new HotNewsFragmentPresenter(getActivity(), this);
         mIHotNewsFragmentPresenter.onShowCarouseOnP(getActivity());
         mIHotNewsFragmentPresenter.onShowDataOnP(getActivity());
 
@@ -186,6 +184,6 @@ public class HotNewsFragment extends Fragment implements IHotNewsFragmenrContrac
 
     @Override
     public <T> void onSetPresenter(T t) {
-
+        this.mIHotNewsFragmentPresenter = (HotNewsFragmentPresenter) t;
     }
 }
