@@ -11,16 +11,14 @@ import android.support.v4.app.FragmentTransaction;
 import android.widget.TextView;
 
 import com.luhuanju.listenread.R;
-import com.luhuanju.listenread.presenters.IHomeActivtyPresenter;
+import com.luhuanju.listenread.contracts.IHomeActivityContract;
 import com.luhuanju.listenread.presenters.impls.HomeActivityPresenter;
-import com.luhuanju.listenread.uis.IHomeActivityVu;
 import com.luhuanju.listenread.utils.AppActivity;
-import com.luhuanju.listenread.utils.FontHelper;
 
 import butterknife.InjectView;
 import butterknife.OnClick;
 
-public class HomeActivity extends FragmentActivity implements IHomeActivityVu {
+public class HomeActivity extends FragmentActivity implements IHomeActivityContract.IHomeActivityVu {
     @InjectView(R.id.tv_hotnews)
     TextView mTvHotNews;
     @InjectView(R.id.tv_transceiver)
@@ -29,7 +27,7 @@ public class HomeActivity extends FragmentActivity implements IHomeActivityVu {
     TextView mTvWeekly;
     @InjectView(R.id.tv_setting)
     TextView mTvSetting;
-    private IHomeActivtyPresenter mHomeActivityPresenter = null;
+    private IHomeActivityContract.IHomeActivityPresenter mHomeActivityPresenter = null;
     private HomeActivityCallBack mHomeActivityCallBack = null;
     private static final String HOT_NEWS = "hotnews";
     private static final String TRANSCEIVER = "transceiver";
@@ -59,6 +57,11 @@ public class HomeActivity extends FragmentActivity implements IHomeActivityVu {
     void onClickS() {
         mHomeActivityCallBack.onSelecteTabCallBack(SETTING);
         mHomeActivityPresenter.getObjectComponentOnP(this);
+    }
+
+    @Override
+    public <T> void onSetPresenter(T t) {
+
     }
 
 

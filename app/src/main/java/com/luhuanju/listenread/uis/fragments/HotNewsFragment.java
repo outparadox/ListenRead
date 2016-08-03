@@ -21,11 +21,10 @@ import com.daimajia.slider.library.SliderTypes.BaseSliderView;
 import com.daimajia.slider.library.SliderTypes.TextSliderView;
 import com.daimajia.slider.library.Tricks.ViewPagerEx;
 import com.luhuanju.listenread.R;
+import com.luhuanju.listenread.contracts.IHotNewsFragmenrContract;
 import com.luhuanju.listenread.entity.HotNewsCarousEntity;
 import com.luhuanju.listenread.entity.HotNewsEntity;
-import com.luhuanju.listenread.presenters.IHotNewsFragmentPresenter;
 import com.luhuanju.listenread.presenters.impls.HotNewsFragmentPresenter;
-import com.luhuanju.listenread.uis.IHotNewsFragmentVu;
 import com.luhuanju.listenread.uis.adapters.HotNewsDataAdapter;
 import com.tuesda.walker.circlerefresh.CircleRefreshLayout;
 
@@ -35,7 +34,7 @@ import java.util.List;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
-public class HotNewsFragment extends Fragment implements IHotNewsFragmentVu, CircleRefreshLayout.OnCircleRefreshListener, BaseSliderView.OnSliderClickListener, ViewPagerEx.OnPageChangeListener {
+public class HotNewsFragment extends Fragment implements IHotNewsFragmenrContract.IHotNewstVu, CircleRefreshLayout.OnCircleRefreshListener, BaseSliderView.OnSliderClickListener, ViewPagerEx.OnPageChangeListener {
 
     @InjectView(R.id.hotnews_recy)
     RecyclerView mShowDataRecy;
@@ -182,6 +181,11 @@ public class HotNewsFragment extends Fragment implements IHotNewsFragmentVu, Cir
 
     @Override
     public void onSliderClick(BaseSliderView slider) {
+
+    }
+
+    @Override
+    public <T> void onSetPresenter(T t) {
 
     }
 }

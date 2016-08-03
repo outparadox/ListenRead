@@ -1,4 +1,18 @@
 apply plugin: 'com.android.application'
+//kotlin
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
 
 android {
     compileSdkVersion 23
@@ -19,7 +33,6 @@ android {
     }
 
 
-
 }
 
 
@@ -29,11 +42,15 @@ dependencies {
     compile 'com.melnykov:floatingactionbutton:1.1.0'
     //HotNews下拉刷新
     compile project(':circlerefresh')
+    compile project(':library')
     compile 'com.joanzapata.iconify:android-iconify-ionicons:2.1.1'
     compile 'com.squareup.okhttp3:okhttp:3.2.0'
     compile 'com.makeramen:roundedimageview:2.1.1'
-    // (v2.0.1)
+    // (v2.0.1) jsoup
     compile files('libs/jsoup-1.8.3.jar')
+    //logger
+    compile 'com.orhanobut:logger:1.15'
+    //kotlin
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 
-    compile project(':library')
 }
