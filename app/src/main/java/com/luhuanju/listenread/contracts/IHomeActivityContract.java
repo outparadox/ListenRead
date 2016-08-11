@@ -11,7 +11,6 @@ import com.luhuanju.listenread.base.IViewVu;
 
 public interface IHomeActivityContract {
 
-
      interface IHomeActivityVu extends IViewVu<IHomeActivityPresenter> {
 
          abstract <T> void onShowFragmentUi(FragmentTransaction fragmentTransaction);

@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 import com.luhuanju.listenread.R;
 import com.luhuanju.listenread.contracts.IHomeActivityContract;
-import com.luhuanju.listenread.presenters.HomeActivityPresenter;
+import com.luhuanju.listenread.presenters.KHomeActivityPresenter;
 import com.luhuanju.listenread.utils.views.FontHelper;
 
 import butterknife.BindView;
@@ -62,7 +62,7 @@ public class HomeActivity extends FragmentActivity implements IHomeActivityContr
 
     @Override
     public <T> void onSetPresenter(T t) {
-        this.mHomeActivityPresenter = (HomeActivityPresenter) t;
+        this.mHomeActivityPresenter = (KHomeActivityPresenter) t;
     }
 
 
@@ -113,7 +113,7 @@ public class HomeActivity extends FragmentActivity implements IHomeActivityContr
 
     private void initData(Bundle savedInstanceState) {
         ButterKnife.bind(this);
-        new HomeActivityPresenter(this, this);
+        new KHomeActivityPresenter(this, this);
         mHomeActivityPresenter.getObjectComponentOnP(this);
         FontHelper.applyIconFont(this, mTvHotNews, mTvTransceiver, mTvWeekly, mTvSetting);
         if (savedInstanceState != null) {
