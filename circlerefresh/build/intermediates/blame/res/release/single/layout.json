@@ -24,12 +24,12 @@
         "source": "/Users/luhuanju/Documents/ListenRead/circlerefresh/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.1.1/res/layout/abc_screen_simple.xml"
     },
     {
-        "merged": "/Users/luhuanju/Documents/ListenRead/circlerefresh/build/intermediates/res/merged/release/layout/abc_screen_simple_overlay_action_mode.xml",
-        "source": "/Users/luhuanju/Documents/ListenRead/circlerefresh/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.1.1/res/layout/abc_screen_simple_overlay_action_mode.xml"
-    },
-    {
         "merged": "/Users/luhuanju/Documents/ListenRead/circlerefresh/build/intermediates/res/merged/release/layout/select_dialog_item_material.xml",
         "source": "/Users/luhuanju/Documents/ListenRead/circlerefresh/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.1.1/res/layout/select_dialog_item_material.xml"
+    },
+    {
+        "merged": "/Users/luhuanju/Documents/ListenRead/circlerefresh/build/intermediates/res/merged/release/layout/abc_screen_simple_overlay_action_mode.xml",
+        "source": "/Users/luhuanju/Documents/ListenRead/circlerefresh/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.1.1/res/layout/abc_screen_simple_overlay_action_mode.xml"
     },
     {
         "merged": "/Users/luhuanju/Documents/ListenRead/circlerefresh/build/intermediates/res/merged/release/layout/abc_search_dropdown_item_icons_2line.xml",
@@ -44,12 +44,12 @@
         "source": "/Users/luhuanju/Documents/ListenRead/circlerefresh/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.1.1/res/layout/support_simple_spinner_dropdown_item.xml"
     },
     {
-        "merged": "/Users/luhuanju/Documents/ListenRead/circlerefresh/build/intermediates/res/merged/release/layout/abc_popup_menu_item_layout.xml",
-        "source": "/Users/luhuanju/Documents/ListenRead/circlerefresh/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.1.1/res/layout/abc_popup_menu_item_layout.xml"
-    },
-    {
         "merged": "/Users/luhuanju/Documents/ListenRead/circlerefresh/build/intermediates/res/merged/release/layout/abc_action_bar_up_container.xml",
         "source": "/Users/luhuanju/Documents/ListenRead/circlerefresh/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.1.1/res/layout/abc_action_bar_up_container.xml"
+    },
+    {
+        "merged": "/Users/luhuanju/Documents/ListenRead/circlerefresh/build/intermediates/res/merged/release/layout/abc_popup_menu_item_layout.xml",
+        "source": "/Users/luhuanju/Documents/ListenRead/circlerefresh/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.1.1/res/layout/abc_popup_menu_item_layout.xml"
     },
     {
         "merged": "/Users/luhuanju/Documents/ListenRead/circlerefresh/build/intermediates/res/merged/release/layout/abc_list_menu_item_layout.xml",

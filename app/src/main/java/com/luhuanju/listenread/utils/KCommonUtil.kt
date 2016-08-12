@@ -28,7 +28,6 @@ class KCommonUtil {
         /**
          * creat gson
          */
-        @JvmStatic
         fun creatGson(): Gson {
             return GsonBuilder().setDateFormat("yyyy-MM-dd HH:mm:ss").setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES).create()
         }

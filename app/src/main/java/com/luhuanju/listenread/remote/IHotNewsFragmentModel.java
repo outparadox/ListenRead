@@ -12,5 +12,5 @@ public interface IHotNewsFragmentModel {
 
     public abstract <T> List<HotNewsCarousEntity> onShowCarouseOnM();
 
-    public abstract <T> List<HotNewsEntity> onShowDataOnM();
+    public abstract <T> List<HotNewsEntity> onShowDataOnM() throws IllegalAccessException, InstantiationException;
 }

@@ -8,7 +8,6 @@ import android.view.View
 
 abstract class KBasePresenter<T : View> {
 
-
     protected var view: T ? = null
 
     fun register(view: T) {
@@ -18,7 +17,6 @@ abstract class KBasePresenter<T : View> {
     fun unregister() {
         this.view = null
     }
-
 }
 
 

@@ -4,7 +4,7 @@ apply plugin: 'android-apt'
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
-apply plugin: 'realm-android'
+//apply plugin: 'realm-android'
 
 
 buildscript {
@@ -18,8 +18,8 @@ buildscript {
 }
 
 android {
-    compileSdkVersion 23
-    buildToolsVersion "23.0.1"
+    compileSdkVersion 22
+    buildToolsVersion "22.0.1"
 
     defaultConfig {
         applicationId "com.luhuanju.listenread"
@@ -60,19 +60,12 @@ dependencies {
     compile 'org.jetbrains.anko:anko-sdk15:0.9' // sdk19, sdk21, sdk23 are also available
     compile 'org.jetbrains.anko:anko-support-v4:0.9' // In case you need support-v4 bindings
     compile 'org.jetbrains.anko:anko-appcompat-v7:0.9' //
-    //retorofit
-//    compile 'com.squareup.retrofit:retrofit:2.0.0-beta2'
-//    compile 'com.squareup.retrofit:converter-gson:2.0.0-beta2' // Gson Converter
-//    compile 'com.squareup.retrofit:adapter-rxjava:2.0.0-beta2' // provides RxJava Adapters
-//    testCompile 'junit:junit:4.12'
     compile 'com.squareup.retrofit:retrofit:1.9.0'
     compile 'com.squareup.okhttp:okhttp:2.2.0'
-    compile('com.octo.android.robospice:robospice-retrofit:+') {
-        exclude module: 'gson'
-    }
-    //gson
-    compile'com.google.code.gson:gson:2.4' // Gson
-    kapt "io.realm:realm-annotations:0.87.4"
-    kapt "io.realm:realm-annotations-processor:0.87.4"
+    compile 'com.squareup.picasso:picasso:2.4.0'
+    compile 'com.squareup.okhttp:okhttp-urlconnection:2.2.0'
+    compile 'com.google.code.gson:gson:+'
+//    kapt "io.realm:realm-annotations:0.87.4"
+//    kapt "io.realm:realm-annotations-processor:0.87.4"
 
 }

@@ -2,14 +2,12 @@ package com.luhuanju.listenread.entity
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
-import io.realm.RealmObject
-import io.realm.annotations.RealmClass
+//import io.realm.RealmObject
 
 /**
  * Created by huanjulu on 16/8/11.
  */
-@RealmClass
-open class KHotNewsEntity : RealmObject() {
+open class KHotNewsEntity  {
 
 
     @SerializedName("code")

@@ -5,7 +5,6 @@ package com.luhuanju.listenread.utils.views;/*
  * Author: luhuanju
  */
 
-import android.app.Application;
 import android.content.Context;
 import android.graphics.Typeface;
 import android.util.Log;
@@ -19,7 +18,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class FontHelper {
-    private static Application mApplication;
+    private static Context mApplication;
     private static Typeface mTypeFace;
 
     public static final String FONT = "fonts/Zhaimi-Medium.ttf";
@@ -63,7 +62,7 @@ public class FontHelper {
      * @param textView
      */
     public static void applyIcon(Context context, TextView textView) {
-        mApplication = (mApplication == null) ? AppApplication.getApplication(context) : mApplication;
+        mApplication = (mApplication == null) ? AppApplication.getApplication() : mApplication;
         mTypeFace = (mTypeFace == null) ? Typeface.createFromAsset(mApplication.getAssets(), ICONFONT) : mTypeFace;
         textView.setTypeface(mTypeFace);
     }

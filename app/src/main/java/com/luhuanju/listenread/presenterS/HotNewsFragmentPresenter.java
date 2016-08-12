@@ -31,7 +31,13 @@ public class HotNewsFragmentPresenter implements IHotNewsFragmenrContract.IHomeN
 
     @Override
     public <T> void onShowDataOnP(Activity activity) {
-        mIHotNewsFragmentVu.onShowData(mIHotNewsFragmentModel.onShowDataOnM());
+        try {
+            mIHotNewsFragmentVu.onShowData(mIHotNewsFragmentModel.onShowDataOnM());
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        }
     }
 
 

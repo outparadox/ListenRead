@@ -11,17 +11,25 @@ import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.widget.ListView;
 
+import com.luhuanju.listenread.apis.APIServiceGeneratorTest;
+import com.luhuanju.listenread.apis.AuthenticationAPI;
 import com.luhuanju.listenread.entity.HotNewsCarousEntity;
 import com.luhuanju.listenread.entity.HotNewsEntity;
 import com.luhuanju.listenread.remote.IHotNewsFragmentModel;
 import com.luhuanju.listenread.utils.XMLDataParseUtil;
+import com.luhuanju.listenread.utils.application.AppApplication;
 
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
+import retrofit.Callback;
+import retrofit.RetrofitError;
+import retrofit.client.Response;
 
 public class HotNewsFragmentModel implements IHotNewsFragmentModel, XMLDataParseUtil.DocumentPOJOCallback {
     private static final String TAG = HotNewsFragmentModel.class.getName().toString();
@@ -30,6 +38,7 @@ public class HotNewsFragmentModel implements IHotNewsFragmentModel, XMLDataParse
     private List<HotNewsEntity> hotNewsEntities = new ArrayList<>();
     private List<HotNewsCarousEntity> mHotNewsCarousEntity = new ArrayList<>();
     private HotNewsEntityPOJOCallBack mHotNewsEntityPOJOCallBack;
+    private Map<String, Integer> map = new HashMap<>();
 
     public HotNewsFragmentModel() {
     }
@@ -45,31 +54,48 @@ public class HotNewsFragmentModel implements IHotNewsFragmentModel, XMLDataParse
     }
 
     @Override
-    public <T> List<HotNewsEntity> onShowDataOnM() {
+    public <T> List<HotNewsEntity> onShowDataOnM()  {
         //监听回调，此处是监听document 对象并获得实体信息
 //        XMLDataParseUtil.onInstance().setDocumentPOJOListener(this);
 //        XMLDataParseUtil.onInstance().onDocumentPOJO(HOTNEWS_BASE_URL, activity, listView);
 //        XMLDataParseUtil.onInstance().DocumentPOJO(HOTNEWS_BASE_URL);
-
 //        for (Element element : XMLDataParseUtil.onInstance().DocumentPOJO(HOTNEWS_BASE_URL).getElementsByClass("item-top")) {
 //            onSetHotNewsEntity(element);
 //        }
+//        KHttp.Companion.getInstance().getMService().getGankData( Calendar.getInstance().get(Calendar.YEAR),  Calendar.getInstance().get(Calendar.MONTH),  Calendar.getInstance().get(Calendar.DAY_OF_MONTH));
+
+//        API.REST_ADAPTER.
+//        Api.INSTANCE.getApi().login("popular",1);
+        Log.d("TAG","onShowDataOnM");
+        APIServiceGeneratorTest.INSTANCE.generate(AuthenticationAPI.class, AppApplication.getApplication()).getNews("popular", 1, new Callback<Response>() {
+            @Override
+            public void success(Response response, Response response2) {
+
+            }
+
+            @Override
+            public void failure(RetrofitError error) {
+
+            }
+        });
         return null;
     }
 
 
     @Override
     public List<HotNewsEntity> onDocumentPOJO(Document document, FragmentActivity activity, ListView listView) {
-        Elements elements = document.getElementsByClass("item-top");
-        for (Element element : elements) {
-            onSetHotNewsEntity(element);
-        }
-        if (mHotNewsEntityPOJOCallBack != null) {
-            if (hotNewsEntities != null && hotNewsEntities.size() > 0) {
-                mHotNewsEntityPOJOCallBack.onHotNewsEntityPOJOSuccess(hotNewsEntities, activity, listView);
-            } else
-                mHotNewsEntityPOJOCallBack.onHotNewsEntityPOJOFailed();
-        }
+
+
+//        Elements elements = document.getElementsByClass("item-top");
+//        for (Element element : elements) {
+//            onSetHotNewsEntity(element);
+//        }
+//        if (mHotNewsEntityPOJOCallBack != null) {
+//            if (hotNewsEntities != null && hotNewsEntities.size() > 0) {
+//                mHotNewsEntityPOJOCallBack.onHotNewsEntityPOJOSuccess(hotNewsEntities, activity, listView);
+//            } else
+//                mHotNewsEntityPOJOCallBack.onHotNewsEntityPOJOFailed();
+//        }
         return hotNewsEntities;
 
     }
@@ -95,7 +121,7 @@ public class HotNewsFragmentModel implements IHotNewsFragmentModel, XMLDataParse
     private void onSetHotNewsCurouseEntity(Element element) {
         HotNewsCarousEntity hotNewsCarousEntity = new HotNewsCarousEntity();
 //        hotNewsCarousEntity.setTitle(element.getElementsByTag("p").text());
-        Log.d("TAG","："+element.getElementsByClass("word_cont").text());
+        Log.d("TAG", "：" + element.getElementsByClass("word_cont").text());
 //        HotNewsCarousEntity hotNewsCarousEntity = new HotNewsCarousEntity();
 //        hotNewsCarousEntity.setTitle(element.getElementsByTag("img").attr("alt"));
 //        hotNewsCarousEntity.setThumbnailSrc("http://www.people.com.cn" + element.getElementsByTag("img").attr("src"));
