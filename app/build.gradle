@@ -52,20 +52,28 @@ dependencies {
     compile 'com.makeramen:roundedimageview:2.1.1'
     // (v2.0.1) jsoup
     compile files('libs/jsoup-1.8.3.jar')
+    //gson
+    compile 'com.google.code.gson:gson:+'
+    //picasso
+    compile 'com.squareup.picasso:picasso:2.4.0'
     //logger
     compile 'com.orhanobut:logger:1.15'
     //kotlin
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     //anko
-    compile 'org.jetbrains.anko:anko-sdk15:0.9' // sdk19, sdk21, sdk23 are also available
-    compile 'org.jetbrains.anko:anko-support-v4:0.9' // In case you need support-v4 bindings
-    compile 'org.jetbrains.anko:anko-appcompat-v7:0.9' //
-    compile 'com.squareup.retrofit:retrofit:1.9.0'
-    compile 'com.squareup.okhttp:okhttp:2.2.0'
-    compile 'com.squareup.picasso:picasso:2.4.0'
-    compile 'com.squareup.okhttp:okhttp-urlconnection:2.2.0'
-    compile 'com.google.code.gson:gson:+'
-//    kapt "io.realm:realm-annotations:0.87.4"
-//    kapt "io.realm:realm-annotations-processor:0.87.4"
+    compile 'org.jetbrains.anko:anko-sdk15:0.9'
+    compile 'org.jetbrains.anko:anko-support-v4:0.9'
+    compile 'org.jetbrains.anko:anko-appcompat-v7:0.9'
+    //retrofit
+    compile 'com.squareup.retrofit2:retrofit:2.0.0-beta3'
+    compile 'com.squareup.retrofit2:converter-gson:2.0.1'
+    compile 'com.squareup.retrofit2:adapter-rxjava:2.0.0-beta4'
+    compile "com.squareup.retrofit2:converter-moshi:2.0.0"
+    //okhttp
+    compile 'com.squareup.okhttp3:okhttp:3.0.1'
+    compile 'com.squareup.okhttp3:logging-interceptor:3.0.1'
+    //rx
+    compile 'io.reactivex:rxkotlin:0.60.0'
+    compile 'io.reactivex:rxandroid:1.2.1'
 
 }

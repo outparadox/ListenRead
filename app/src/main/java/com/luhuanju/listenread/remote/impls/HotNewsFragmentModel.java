@@ -11,13 +11,12 @@ import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.widget.ListView;
 
-import com.luhuanju.listenread.apis.APIServiceGeneratorTest;
-import com.luhuanju.listenread.apis.AuthenticationAPI;
 import com.luhuanju.listenread.entity.HotNewsCarousEntity;
 import com.luhuanju.listenread.entity.HotNewsEntity;
 import com.luhuanju.listenread.remote.IHotNewsFragmentModel;
+import com.luhuanju.listenread.services.apis.AuthenticationAPI;
+import com.luhuanju.listenread.services.retrofits.RetrofitService;
 import com.luhuanju.listenread.utils.XMLDataParseUtil;
-import com.luhuanju.listenread.utils.application.AppApplication;
 
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -27,9 +26,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import retrofit.Callback;
-import retrofit.RetrofitError;
-import retrofit.client.Response;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class HotNewsFragmentModel implements IHotNewsFragmentModel, XMLDataParseUtil.DocumentPOJOCallback {
     private static final String TAG = HotNewsFragmentModel.class.getName().toString();
@@ -38,7 +37,7 @@ public class HotNewsFragmentModel implements IHotNewsFragmentModel, XMLDataParse
     private List<HotNewsEntity> hotNewsEntities = new ArrayList<>();
     private List<HotNewsCarousEntity> mHotNewsCarousEntity = new ArrayList<>();
     private HotNewsEntityPOJOCallBack mHotNewsEntityPOJOCallBack;
-    private Map<String, Integer> map = new HashMap<>();
+    private Map<String, Object> map = new HashMap<>();
 
     public HotNewsFragmentModel() {
     }
@@ -46,15 +45,11 @@ public class HotNewsFragmentModel implements IHotNewsFragmentModel, XMLDataParse
 
     @Override
     public <T> List<HotNewsCarousEntity> onShowCarouseOnM() {
-//        for (Element element : XMLDataParseUtil.onInstance().DocumentPOJO(HOTNEWS_CAROUSE_BASE_URL).getElementsByTag("picarea").first().getElementsByTag("image")) {
-//            onSetHotNewsCurouseEntity(element);
-//        }
-//        return mHotNewsCarousEntity;
         return null;
     }
 
     @Override
-    public <T> List<HotNewsEntity> onShowDataOnM()  {
+    public <T> List<HotNewsEntity> onShowDataOnM() {
         //监听回调，此处是监听document 对象并获得实体信息
 //        XMLDataParseUtil.onInstance().setDocumentPOJOListener(this);
 //        XMLDataParseUtil.onInstance().onDocumentPOJO(HOTNEWS_BASE_URL, activity, listView);
@@ -62,40 +57,24 @@ public class HotNewsFragmentModel implements IHotNewsFragmentModel, XMLDataParse
 //        for (Element element : XMLDataParseUtil.onInstance().DocumentPOJO(HOTNEWS_BASE_URL).getElementsByClass("item-top")) {
 //            onSetHotNewsEntity(element);
 //        }
-//        KHttp.Companion.getInstance().getMService().getGankData( Calendar.getInstance().get(Calendar.YEAR),  Calendar.getInstance().get(Calendar.MONTH),  Calendar.getInstance().get(Calendar.DAY_OF_MONTH));
-
-//        API.REST_ADAPTER.
-//        Api.INSTANCE.getApi().login("popular",1);
-        Log.d("TAG","onShowDataOnM");
-        APIServiceGeneratorTest.INSTANCE.generate(AuthenticationAPI.class, AppApplication.getApplication()).getNews("popular", 1, new Callback<Response>() {
+        RetrofitService.INSTANCE.creat(AuthenticationAPI.class).contributorsBySimpleGetCall("popular", 1).enqueue(new Callback<String>() {
             @Override
-            public void success(Response response, Response response2) {
-
+            public void onResponse(Call<String> call, Response<String> response) {
+                Log.d("TAG", response.body());
             }
 
             @Override
-            public void failure(RetrofitError error) {
+            public void onFailure(Call<String> call, Throwable t) {
 
             }
         });
+
         return null;
     }
 
 
     @Override
     public List<HotNewsEntity> onDocumentPOJO(Document document, FragmentActivity activity, ListView listView) {
-
-
-//        Elements elements = document.getElementsByClass("item-top");
-//        for (Element element : elements) {
-//            onSetHotNewsEntity(element);
-//        }
-//        if (mHotNewsEntityPOJOCallBack != null) {
-//            if (hotNewsEntities != null && hotNewsEntities.size() > 0) {
-//                mHotNewsEntityPOJOCallBack.onHotNewsEntityPOJOSuccess(hotNewsEntities, activity, listView);
-//            } else
-//                mHotNewsEntityPOJOCallBack.onHotNewsEntityPOJOFailed();
-//        }
         return hotNewsEntities;
 
     }
@@ -128,8 +107,6 @@ public class HotNewsFragmentModel implements IHotNewsFragmentModel, XMLDataParse
 //        hotNewsCarousEntity.setUrl(element.getElementsByTag("a").first().attr("href"));
         //依据地址获取具体内容以及大图
 //        XMLDataParseUtil.onInstance().DocumentPOJO(hotNewsCarousEntity.getUrl())
-
-
         mHotNewsCarousEntity.add(hotNewsCarousEntity);
     }
 

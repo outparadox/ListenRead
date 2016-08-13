@@ -10,11 +10,11 @@ open interface IRetrofitCallback<T> {
     /**
      * retrofit is success
      */
-    open abstract fun  onlyRetrofitSucess(t: T)
+    open abstract fun onlyRetrofitSucess(t: T)
 
     /**
      * retrofit in error failed
      */
-    open abstract fun  onlyRetrofitError()
+    open abstract fun onlyRetrofitError()
 
 }
