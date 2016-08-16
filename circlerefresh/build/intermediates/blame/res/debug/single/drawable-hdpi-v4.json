@@ -36,12 +36,12 @@
         "source": "/Users/luhuanju/Documents/ListenRead/circlerefresh/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.1.1/res/drawable-hdpi-v4/abc_btn_radio_to_on_mtrl_015.png"
     },
     {
-        "merged": "/Users/luhuanju/Documents/ListenRead/circlerefresh/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_list_focused_holo.9.png",
-        "source": "/Users/luhuanju/Documents/ListenRead/circlerefresh/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.1.1/res/drawable-hdpi-v4/abc_list_focused_holo.9.png"
-    },
-    {
         "merged": "/Users/luhuanju/Documents/ListenRead/circlerefresh/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_ab_share_pack_mtrl_alpha.9.png",
         "source": "/Users/luhuanju/Documents/ListenRead/circlerefresh/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.1.1/res/drawable-hdpi-v4/abc_ab_share_pack_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/Users/luhuanju/Documents/ListenRead/circlerefresh/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_list_focused_holo.9.png",
+        "source": "/Users/luhuanju/Documents/ListenRead/circlerefresh/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.1.1/res/drawable-hdpi-v4/abc_list_focused_holo.9.png"
     },
     {
         "merged": "/Users/luhuanju/Documents/ListenRead/circlerefresh/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_textfield_search_default_mtrl_alpha.9.png",
@@ -108,12 +108,12 @@
         "source": "/Users/luhuanju/Documents/ListenRead/circlerefresh/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.1.1/res/drawable-hdpi-v4/abc_list_longpressed_holo.9.png"
     },
     {
-        "merged": "/Users/luhuanju/Documents/ListenRead/circlerefresh/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_btn_switch_to_on_mtrl_00001.9.png",
-        "source": "/Users/luhuanju/Documents/ListenRead/circlerefresh/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.1.1/res/drawable-hdpi-v4/abc_btn_switch_to_on_mtrl_00001.9.png"
-    },
-    {
         "merged": "/Users/luhuanju/Documents/ListenRead/circlerefresh/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_switch_track_mtrl_alpha.9.png",
         "source": "/Users/luhuanju/Documents/ListenRead/circlerefresh/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.1.1/res/drawable-hdpi-v4/abc_switch_track_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/Users/luhuanju/Documents/ListenRead/circlerefresh/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_btn_switch_to_on_mtrl_00001.9.png",
+        "source": "/Users/luhuanju/Documents/ListenRead/circlerefresh/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.1.1/res/drawable-hdpi-v4/abc_btn_switch_to_on_mtrl_00001.9.png"
     },
     {
         "merged": "/Users/luhuanju/Documents/ListenRead/circlerefresh/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_list_pressed_holo_dark.9.png",

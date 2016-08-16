@@ -7,7 +7,9 @@
     <color name="theme_color">#FF6347</color>
 
 
+    <color name="main_theme">#FFA07A</color>
     //hotnews
+    <color name="title_color">#454545</color>
     <color name="remark_color">#6E7B8B</color>
     <color name="content_color">#757575</color>
 </resources>

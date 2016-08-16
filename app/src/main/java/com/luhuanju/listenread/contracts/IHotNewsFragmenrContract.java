@@ -8,19 +8,18 @@ import android.app.Activity;
 
 import com.luhuanju.listenread.base.IPersenter;
 import com.luhuanju.listenread.base.IViewVu;
-import com.luhuanju.listenread.entity.HotNewsCarousEntity;
-import com.luhuanju.listenread.entity.HotNewsEntity;
+import com.luhuanju.listenread.entity.HotNewsWrap;
 
-import java.util.List;
+import retrofit2.Response;
 
 public interface IHotNewsFragmenrContract {
 
 
     interface IHotNewstVu extends IViewVu<IHomeNewsPresenter> {
 
-        abstract void onShowCarouse(List<HotNewsCarousEntity> hotNewsCarousEntities);
+        abstract void onShowCarouse(Response<HotNewsWrap> hotNewsEntities);
 
-        abstract void onShowData(List<HotNewsEntity> hotNewsEntities);
+        abstract <T> void onShowData(Response<HotNewsWrap> hotNewsEntities);
 
     }
 

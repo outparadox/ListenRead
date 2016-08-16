@@ -1,2 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
+
+    <item
+        jar="/Users/luhuanju/Documents/ListenRead/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="22.0.1"
+        sha1="4eded79356c5574def503a2872eef01c5a7c78d3">
+        <dex dex="/Users/luhuanju/Documents/ListenRead/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_2cc15b8dfcd7588296473ba58af21b4aa35fc610/classes.dex" />
+    </item>
+
+</items>

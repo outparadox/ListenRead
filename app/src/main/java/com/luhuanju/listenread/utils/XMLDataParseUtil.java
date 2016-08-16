@@ -9,20 +9,17 @@ import android.os.AsyncTask;
 import android.support.v4.app.FragmentActivity;
 import android.widget.ListView;
 
-import com.luhuanju.listenread.entity.HotNewsEntity;
-
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
 import java.io.IOException;
-import java.util.List;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
 public class XMLDataParseUtil {
-    private DocumentPOJOCallback mDocumentPOJOCallback = null;
+//    private DocumentPOJOCallback mDocumentPOJOCallback = null;
     private Document mDocument;
     private static XMLDataParseUtil mXmlDataParseUtil = null;
 
@@ -73,20 +70,8 @@ public class XMLDataParseUtil {
         return mDocument;
     }
 
-    /**
-     * 设计欠缺 弃用
-     */
-    public interface DocumentPOJOCallback {
-        List<HotNewsEntity> onDocumentPOJO(Document document, FragmentActivity activity, ListView listView);
 
-    }
 
-    /**
-     * 设计欠缺 弃用
-     */
-    public void setDocumentPOJOListener(DocumentPOJOCallback documentPOJOListener) {
-        this.mDocumentPOJOCallback = documentPOJOListener;
-    }
 
     /**
      * 设计欠缺 弃用
@@ -122,9 +107,7 @@ public class XMLDataParseUtil {
 
         @Override
         protected void onPostExecute(Document document) {
-            if (document == null || mDocumentPOJOCallback == null) return;
-            mDocumentPOJOCallback.onDocumentPOJO(document, activity, listView);
-
+//            if (document == null || mDocumentPOJOCallback == null) return;
         }
     }
 

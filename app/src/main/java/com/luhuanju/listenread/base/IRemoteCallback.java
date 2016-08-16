@@ -13,7 +13,7 @@ public interface IRemoteCallback {
      * @param <T>
      */
 
-    abstract <T> void onRemoteDataSucess(T t);
+    abstract <T> void onlyRemoteDataSucess(T t);
 
     /**
      * when data is failes from remote
@@ -22,5 +22,5 @@ public interface IRemoteCallback {
      * @param <T>
      */
 
-    abstract <T> void onRemoteDataFailes(T t);
+    abstract <T> void onlyRemoteDataFailed(T t);
 }

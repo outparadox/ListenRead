@@ -1,8 +1,15 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="android:Theme.Holo.Light.DarkActionBar">
+    <style name="AppTheme" parent="android:Theme.Light.NoTitleBar">
         <!-- Customize your theme here. -->
     </style>
+    <style name="notitle">
+        <item name="android:windowNoTitle">true</item>
+    </style>
+    <style name="ListenReadTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="windowActionModeOverlay">true</item>
 
+    </style>
 </resources>

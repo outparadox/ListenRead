@@ -5,65 +5,95 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity"
+    tools:context=".uis.activitys.HomeActivity"
     >
 
-    <RelativeLayout
-        android:id="@+id/rlay_repalce"
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1"
-        >
-    </RelativeLayout>
+        android:layout_weight="9"
+        android:background="@color/main_theme"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <TextView
+            android:text="ListenRead"
+            style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textColor="@color/white"/>
+
+    </android.support.v7.widget.Toolbar>
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="8"
-        android:orientation="horizontal"
+        android:layout_weight="1"
+        android:orientation="vertical"
         >
 
-        <TextView
-            android:id="@+id/tv_hotnews"
+        <RelativeLayout
+
+            android:id="@+id/rlay_repalce"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:gravity="center"
-            android:text="\uE60d"
-            android:textColor="#FF6347"
-            android:textSize="25sp"
-            />
+            >
+        </RelativeLayout>
 
-        <TextView
-            android:id="@+id/tv_transceiver"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="\uE605"
-            android:textSize="20sp"
-            />
+            android:layout_weight="9"
+            android:orientation="horizontal"
+            >
 
-        <TextView
-            android:id="@+id/tv_weekly"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="\uE617"
-            android:textSize="25sp"
-            />
+            <TextView
+                android:id="@+id/tv_hotnews"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="\uE60d"
+                android:textColor="#FF6347"
+                android:textSize="25sp"
+                />
 
-        <TextView
-            android:id="@+id/tv_setting"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="\uE616"
-            android:textSize="20sp"
-            />
+            <TextView
+                android:id="@+id/tv_transceiver"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="\uE605"
+                android:textSize="20sp"
+                />
 
+            <TextView
+                android:id="@+id/tv_weekly"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="\uE617"
+                android:textSize="25sp"
+                />
+
+            <TextView
+                android:id="@+id/tv_setting"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="\uE616"
+                android:textSize="20sp"
+                />
+
+
+        </LinearLayout>
 
     </LinearLayout>
 

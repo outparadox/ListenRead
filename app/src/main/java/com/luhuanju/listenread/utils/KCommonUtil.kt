@@ -31,6 +31,11 @@ class KCommonUtil {
         fun creatGson(): Gson {
             return GsonBuilder().setDateFormat("yyyy-MM-dd HH:mm:ss").setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES).create()
         }
+
+        fun isNotEmpty(content: String?): Boolean {
+            if (content != null && !content.equals("") && content != "") return true else false;
+            return true;
+        }
     }
 }
 

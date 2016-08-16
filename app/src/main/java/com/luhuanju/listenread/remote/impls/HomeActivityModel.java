@@ -73,10 +73,10 @@ public class HomeActivityModel implements IHomeActivityModel, HomeActivity.HomeA
     }
 
     /**
-     * @param t
+     * @param
      * @param <T>
      */
-    <T extends Fragment> void isFragmentEverShow(FragmentTransaction fragmentTransaction, T t, String tag) {
+    <T extends Fragment> void isFragmentEverShow(FragmentTransaction fragmentTransaction, Fragment t, String tag) {
         if (t.isAdded()) {
             fragmentTransaction.show(t);
         } else {

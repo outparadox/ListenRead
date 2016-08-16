@@ -54,8 +54,6 @@ public class JavaService {
                 .build();
         return retrofit.create(AuthenticationAPI.class);
     }
-
-
 //    HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
 //    interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
 }

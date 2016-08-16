@@ -22,8 +22,7 @@ import com.daimajia.slider.library.SliderTypes.TextSliderView;
 import com.daimajia.slider.library.Tricks.ViewPagerEx;
 import com.luhuanju.listenread.R;
 import com.luhuanju.listenread.contracts.IHotNewsFragmenrContract;
-import com.luhuanju.listenread.entity.HotNewsCarousEntity;
-import com.luhuanju.listenread.entity.HotNewsEntity;
+import com.luhuanju.listenread.entity.HotNewsWrap;
 import com.luhuanju.listenread.presenters.HotNewsFragmentPresenter;
 import com.luhuanju.listenread.uis.adapters.HotNewsDataAdapter;
 import com.tuesda.walker.circlerefresh.CircleRefreshLayout;
@@ -33,6 +32,7 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import retrofit2.Response;
 
 public class HotNewsFragment extends Fragment implements IHotNewsFragmenrContract.IHotNewstVu, CircleRefreshLayout.OnCircleRefreshListener, BaseSliderView.OnSliderClickListener, ViewPagerEx.OnPageChangeListener {
 
@@ -46,7 +46,7 @@ public class HotNewsFragment extends Fragment implements IHotNewsFragmenrContrac
     private CircleRefreshLayout mRefreshLayout;
     private IHotNewsFragmenrContract.IHomeNewsPresenter mIHotNewsFragmentPresenter = null;
     private HotNewsDataAdapter mHotNewsDataAdapter = null;
-    private List<HotNewsEntity> mHotNewsEntities = new ArrayList<>();
+    private List<HotNewsWrap.DataEntity.ArticleEntity> mHotNewsEntities = new ArrayList<>();
     private LinearLayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
 
 
@@ -63,6 +63,7 @@ public class HotNewsFragment extends Fragment implements IHotNewsFragmenrContrac
         return view;
     }
 
+
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
@@ -71,14 +72,14 @@ public class HotNewsFragment extends Fragment implements IHotNewsFragmenrContrac
 
 
     @Override
-    public void onShowCarouse(List<HotNewsCarousEntity> hotNewsCarousEntities) {
-        if(hotNewsCarousEntities==null) return;
+    public void onShowCarouse(Response<HotNewsWrap> hotNewsCarousEntities) {
+        if (hotNewsCarousEntities == null) return;
         if (mCarouseSlider.getTag() == null) {
-            for (HotNewsCarousEntity hotNewsCarousEntity : hotNewsCarousEntities) {
+            for (HotNewsWrap.DataEntity.ArticleEntity hotNewsCarousEntity : hotNewsCarousEntities.body().getData().getArticle()) {
                 TextSliderView textSliderView = new TextSliderView(getActivity());
                 textSliderView
                         .description(hotNewsCarousEntity.getTitle())
-//                        .image(hotNewsCarousEntity.getImgsrc())
+                        .image(hotNewsCarousEntity.getImg())
                         .setScaleType(BaseSliderView.ScaleType.Fit)
                         .setOnSliderClickListener(this);
                 textSliderView.bundle(new Bundle());
@@ -92,22 +93,15 @@ public class HotNewsFragment extends Fragment implements IHotNewsFragmenrContrac
             mCarouseSlider.setCustomAnimation(new DescriptionAnimation());
             mCarouseSlider.setDuration(4000);
             mCarouseSlider.addOnPageChangeListener(this);
-            mCarouseSlider.setTag(hotNewsCarousEntities.size());
+            mCarouseSlider.setTag(hotNewsCarousEntities.body().getData().getArticle().size());
         }
 
 
     }
 
     @Override
-    public void onShowData(List<HotNewsEntity> hotNewsEntities) {
-        if (hotNewsEntities != null) {
-            mData = new String[hotNewsEntities.size()];
-            for (int m = 0; m < hotNewsEntities.size(); m++) {
-                mData[m] = hotNewsEntities.get(m).getTitle();
-            }
-            mHotNewsEntities.addAll(hotNewsEntities);
-            mHotNewsDataAdapter.refreshData(mHotNewsEntities);
-        }
+    public <T> void onShowData(Response<HotNewsWrap> hotNewsEntities) {
+        mHotNewsDataAdapter.refreshData(hotNewsEntities.body().getData().getArticle());
     }
 
     @Override
@@ -184,6 +178,6 @@ public class HotNewsFragment extends Fragment implements IHotNewsFragmenrContrac
 
     @Override
     public <T> void onSetPresenter(T t) {
-        this.mIHotNewsFragmentPresenter = (HotNewsFragmentPresenter) t;
+        this.mIHotNewsFragmentPresenter = (IHotNewsFragmenrContract.IHomeNewsPresenter) t;
     }
 }
