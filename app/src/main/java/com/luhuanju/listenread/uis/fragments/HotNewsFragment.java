@@ -48,6 +48,7 @@ public class HotNewsFragment extends Fragment implements IHotNewsFragmenrContrac
     private HotNewsDataAdapter mHotNewsDataAdapter = null;
     private List<HotNewsWrap.DataEntity.ArticleEntity> mHotNewsEntities = new ArrayList<>();
     private LinearLayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
+    private int mPage = 1;
 
 
     @Override

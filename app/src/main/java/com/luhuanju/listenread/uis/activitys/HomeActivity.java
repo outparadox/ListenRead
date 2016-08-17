@@ -8,6 +8,7 @@ package com.luhuanju.listenread.uis.activitys;/*
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v7.widget.Toolbar;
 import android.widget.TextView;
 
 import com.luhuanju.listenread.R;
@@ -28,6 +29,8 @@ public class HomeActivity extends FragmentActivity implements IHomeActivityContr
     TextView mTvWeekly;
     @BindView(R.id.tv_setting)
     TextView mTvSetting;
+    @BindView(R.id.toolbar)
+    Toolbar mToobar;
     private IHomeActivityContract.IHomeActivityPresenter mHomeActivityPresenter = null;
     private HomeActivityCallBack mHomeActivityCallBack = null;
     private static final String HOT_NEWS = "hotnews";
@@ -83,8 +86,8 @@ public class HomeActivity extends FragmentActivity implements IHomeActivityContr
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-
         initData(savedInstanceState);
+        onInitToobarView(mToobar);
 
     }
 
@@ -111,6 +114,11 @@ public class HomeActivity extends FragmentActivity implements IHomeActivityContr
         super.onDestroy();
     }
 
+
+    private void onInitToobarView(Toolbar toolbar) {
+        toolbar.setNavigationIcon(R.mipmap.ic_back);//设置导航栏图标
+    }
+
     private void initData(Bundle savedInstanceState) {
         ButterKnife.bind(this);
         new KHomeActivityPresenter(this, this);
@@ -119,6 +127,7 @@ public class HomeActivity extends FragmentActivity implements IHomeActivityContr
         if (savedInstanceState != null) {
             mHomeActivityPresenter.onResumeUiOnP(savedInstanceState);
         }
-
     }
+
+
 }

@@ -12,7 +12,7 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="9"
+        android:layout_weight="10"
         android:background="@color/main_theme"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
