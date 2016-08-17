@@ -32,7 +32,6 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import retrofit2.Response;
 
 public class HotNewsFragment extends Fragment implements IHotNewsFragmenrContract.IHotNewstVu, CircleRefreshLayout.OnCircleRefreshListener, BaseSliderView.OnSliderClickListener, ViewPagerEx.OnPageChangeListener {
 
@@ -72,38 +71,38 @@ public class HotNewsFragment extends Fragment implements IHotNewsFragmenrContrac
     }
 
 
-    @Override
-    public void onShowCarouse(Response<HotNewsWrap> hotNewsCarousEntities) {
-        if (hotNewsCarousEntities == null) return;
-        if (mCarouseSlider.getTag() == null) {
-            for (HotNewsWrap.DataEntity.ArticleEntity hotNewsCarousEntity : hotNewsCarousEntities.body().getData().getArticle()) {
-                TextSliderView textSliderView = new TextSliderView(getActivity());
-                textSliderView
-                        .description(hotNewsCarousEntity.getTitle())
-                        .image(hotNewsCarousEntity.getImg())
-                        .setScaleType(BaseSliderView.ScaleType.Fit)
-                        .setOnSliderClickListener(this);
-                textSliderView.bundle(new Bundle());
-                textSliderView.getBundle()
-                        .putString("extra", hotNewsCarousEntity.getTitle());
-
-                mCarouseSlider.addSlider(textSliderView);
-            }
-            mCarouseSlider.setIndicatorVisibility(PagerIndicator.IndicatorVisibility.Invisible);
-            mCarouseSlider.setPresetTransformer(SliderLayout.Transformer.Accordion);
-            mCarouseSlider.setCustomAnimation(new DescriptionAnimation());
-            mCarouseSlider.setDuration(4000);
-            mCarouseSlider.addOnPageChangeListener(this);
-            mCarouseSlider.setTag(hotNewsCarousEntities.body().getData().getArticle().size());
-        }
-
-
-    }
-
-    @Override
-    public <T> void onShowData(Response<HotNewsWrap> hotNewsEntities) {
-        mHotNewsDataAdapter.refreshData(hotNewsEntities.body().getData().getArticle());
-    }
+//    @Override
+//    public void onShowCarouse(Response<HotNewsWrap> hotNewsCarousEntities) {
+//        if (hotNewsCarousEntities == null) return;
+//        if (mCarouseSlider.getTag() == null) {
+//            for (HotNewsWrap.DataEntity.ArticleEntity hotNewsCarousEntity : hotNewsCarousEntities.body().getData().getArticle()) {
+//                TextSliderView textSliderView = new TextSliderView(getActivity());
+//                textSliderView
+//                        .description(hotNewsCarousEntity.getTitle())
+//                        .image(hotNewsCarousEntity.getImg())
+//                        .setScaleType(BaseSliderView.ScaleType.Fit)
+//                        .setOnSliderClickListener(this);
+//                textSliderView.bundle(new Bundle());
+//                textSliderView.getBundle()
+//                        .putString("extra", hotNewsCarousEntity.getTitle());
+//
+//                mCarouseSlider.addSlider(textSliderView);
+//            }
+//            mCarouseSlider.setIndicatorVisibility(PagerIndicator.IndicatorVisibility.Invisible);
+//            mCarouseSlider.setPresetTransformer(SliderLayout.Transformer.Accordion);
+//            mCarouseSlider.setCustomAnimation(new DescriptionAnimation());
+//            mCarouseSlider.setDuration(4000);
+//            mCarouseSlider.addOnPageChangeListener(this);
+//            mCarouseSlider.setTag(hotNewsCarousEntities.body().getData().getArticle().size());
+//        }
+//
+//
+//    }
+//
+//    @Override
+//    public <T> void onShowData(Response<HotNewsWrap> hotNewsEntities) {
+//        mHotNewsDataAdapter.refreshData(hotNewsEntities.body().getData().getArticle());
+//    }
 
     @Override
     public void onStop() {
@@ -152,7 +151,7 @@ public class HotNewsFragment extends Fragment implements IHotNewsFragmenrContrac
         mShowDataRecy.setAdapter(mHotNewsDataAdapter);
         mShowDataRecy.setLayoutManager(mLayoutManager);
         mIHotNewsFragmentPresenter.onShowCarouseOnP(getActivity());
-        mIHotNewsFragmentPresenter.onShowDataOnP(getActivity());
+        mIHotNewsFragmentPresenter.onShowDataOnP(getActivity(), 1);
 
 
     }
@@ -180,5 +179,36 @@ public class HotNewsFragment extends Fragment implements IHotNewsFragmenrContrac
     @Override
     public <T> void onSetPresenter(T t) {
         this.mIHotNewsFragmentPresenter = (IHotNewsFragmenrContract.IHomeNewsPresenter) t;
+    }
+
+    @Override
+    public void onShowCarouse(List<HotNewsWrap.DataEntity.ArticleEntity> hotNewsEntities) {
+        if (hotNewsEntities == null) return;
+        if (mCarouseSlider.getTag() == null) {
+            for (HotNewsWrap.DataEntity.ArticleEntity hotNewsCarousEntity : hotNewsEntities) {
+                TextSliderView textSliderView = new TextSliderView(getActivity());
+                textSliderView
+                        .description(hotNewsCarousEntity.getTitle())
+                        .image(hotNewsCarousEntity.getImg())
+                        .setScaleType(BaseSliderView.ScaleType.Fit)
+                        .setOnSliderClickListener(this);
+                textSliderView.bundle(new Bundle());
+                textSliderView.getBundle()
+                        .putString("extra", hotNewsCarousEntity.getTitle());
+
+                mCarouseSlider.addSlider(textSliderView);
+            }
+            mCarouseSlider.setIndicatorVisibility(PagerIndicator.IndicatorVisibility.Invisible);
+            mCarouseSlider.setPresetTransformer(SliderLayout.Transformer.Accordion);
+            mCarouseSlider.setCustomAnimation(new DescriptionAnimation());
+            mCarouseSlider.setDuration(4000);
+            mCarouseSlider.addOnPageChangeListener(this);
+            mCarouseSlider.setTag(hotNewsEntities.size());
+        }
+    }
+
+    @Override
+    public <T> void onShowData(List<HotNewsWrap.DataEntity.ArticleEntity> hotNewsEntities) {
+        mHotNewsDataAdapter.refreshData(hotNewsEntities);
     }
 }

@@ -10,26 +10,26 @@ import com.luhuanju.listenread.base.IPersenter;
 import com.luhuanju.listenread.base.IViewVu;
 import com.luhuanju.listenread.entity.HotNewsWrap;
 
-import retrofit2.Response;
+import java.util.List;
 
 public interface IHotNewsFragmenrContract {
 
 
     interface IHotNewstVu extends IViewVu<IHomeNewsPresenter> {
 
-        abstract void onShowCarouse(Response<HotNewsWrap> hotNewsEntities);
+        abstract void onShowCarouse(List<HotNewsWrap.DataEntity.ArticleEntity> hotNewsEntities);
 
-        abstract <T> void onShowData(Response<HotNewsWrap> hotNewsEntities);
+        abstract <T> void onShowData( List<HotNewsWrap.DataEntity.ArticleEntity> hotNewsEntities);
 
     }
 
 
-    interface IHomeNewsPresenter extends IPersenter {
+      interface IHomeNewsPresenter extends IPersenter {
 
 
         abstract <T> void onShowCarouseOnP(Activity activity);
 
-        abstract <T> void onShowDataOnP(Activity activity);
+        abstract <T> void onShowDataOnP(Activity activity,int page);
 
 
     }

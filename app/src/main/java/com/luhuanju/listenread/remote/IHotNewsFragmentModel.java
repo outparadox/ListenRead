@@ -9,5 +9,5 @@ public interface IHotNewsFragmentModel {
 
     public abstract <T> void onShowCarouseOnM(IRemoteCallback callback);
 
-    public abstract <T> void onShowDataOnM(IRemoteCallback callback);
+    public abstract <T> void onShowDataOnM(IRemoteCallback callback,int page);
 }

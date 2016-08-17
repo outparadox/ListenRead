@@ -13,7 +13,7 @@ import com.luhuanju.listenread.entity.HotNewsWrap;
 import com.luhuanju.listenread.remote.IHotNewsFragmentModel;
 import com.luhuanju.listenread.remote.impls.HotNewsFragmentModel;
 
-import retrofit2.Response;
+import java.util.List;
 
 public class HotNewsFragmentPresenter implements IHotNewsFragmenrContract.IHomeNewsPresenter {
     private IHotNewsFragmentModel mIHotNewsFragmentModel = null;
@@ -33,7 +33,7 @@ public class HotNewsFragmentPresenter implements IHotNewsFragmenrContract.IHomeN
         mIHotNewsFragmentModel.onShowCarouseOnM(new IRemoteCallback() {
             @Override
             public <T> void onlyRemoteDataSucess(T t) {
-                mIHotNewsFragmentVu.onShowCarouse((Response<HotNewsWrap>) t);
+                mIHotNewsFragmentVu.onShowCarouse((List<HotNewsWrap.DataEntity.ArticleEntity>) t);
             }
 
             @Override
@@ -45,11 +45,11 @@ public class HotNewsFragmentPresenter implements IHotNewsFragmenrContract.IHomeN
     }
 
     @Override
-    public <T> void onShowDataOnP(Activity activity) {
+    public <T> void onShowDataOnP(Activity activity, int page) {
         mIHotNewsFragmentModel.onShowDataOnM(new IRemoteCallback() {
             @Override
             public <T> void onlyRemoteDataSucess(T t) {
-                mIHotNewsFragmentVu.onShowData((Response<HotNewsWrap>) t);
+                mIHotNewsFragmentVu.onShowData((List<HotNewsWrap.DataEntity.ArticleEntity>) t);
 
             }
 
@@ -57,7 +57,7 @@ public class HotNewsFragmentPresenter implements IHotNewsFragmenrContract.IHomeN
             public <T> void onlyRemoteDataFailed(T t) {
 
             }
-        });
+        }, page);
     }
 
 

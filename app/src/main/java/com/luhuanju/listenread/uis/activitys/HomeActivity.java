@@ -16,6 +16,8 @@ import com.luhuanju.listenread.contracts.IHomeActivityContract;
 import com.luhuanju.listenread.presenters.KHomeActivityPresenter;
 import com.luhuanju.listenread.utils.views.FontHelper;
 
+import javax.net.ssl.ManagerFactoryParameters;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;

@@ -13,8 +13,8 @@ import com.luhuanju.listenread.R;
 import com.luhuanju.listenread.remote.IHomeActivityModel;
 import com.luhuanju.listenread.uis.activitys.HomeActivity;
 import com.luhuanju.listenread.uis.fragments.HotNewsFragment;
+import com.luhuanju.listenread.uis.fragments.KTransceiverFragment;
 import com.luhuanju.listenread.uis.fragments.SettingsFragment;
-import com.luhuanju.listenread.uis.fragments.TransceiverFragment;
 import com.luhuanju.listenread.uis.fragments.WeeklyReportFragment;
 
 public class HomeActivityModel implements IHomeActivityModel, HomeActivity.HomeActivityCallBack {
@@ -26,7 +26,7 @@ public class HomeActivityModel implements IHomeActivityModel, HomeActivity.HomeA
     private static String TAB_TAG = HOT_NEWS;
     private WeeklyReportFragment mWeeklyReportFragment = null;
     private HotNewsFragment mHotNewsFragment = null;
-    private TransceiverFragment mTransceiverFragment = null;
+    private KTransceiverFragment mTransceiverFragment = null;
     private SettingsFragment mSettingsFragment = null;
 
 
@@ -43,7 +43,7 @@ public class HomeActivityModel implements IHomeActivityModel, HomeActivity.HomeA
             mHotNewsFragment = mHotNewsFragment != null ? mHotNewsFragment : new HotNewsFragment();
             isFragmentEverShow(mFragmentTransaction, mHotNewsFragment, HOT_NEWS);
         } else if (TAB_TAG.equals(TRANSCEIVER)) {
-            mTransceiverFragment = mTransceiverFragment != null ? mTransceiverFragment : new TransceiverFragment();
+            mTransceiverFragment = mTransceiverFragment != null ? mTransceiverFragment : new KTransceiverFragment();
             isFragmentEverShow(mFragmentTransaction, mTransceiverFragment, TRANSCEIVER);
         } else if (TAB_TAG.equals(SETTING)) {
             mSettingsFragment = mSettingsFragment != null ? mSettingsFragment : new SettingsFragment();

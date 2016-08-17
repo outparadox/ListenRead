@@ -18,7 +18,7 @@ buildscript {
 }
 
 android {
-    compileSdkVersion 22
+    compileSdkVersion 23
     buildToolsVersion "22.0.1"
 
     defaultConfig {
@@ -54,6 +54,8 @@ dependencies {
     compile 'com.joanzapata.iconify:android-iconify-ionicons:2.1.1'
     compile 'com.squareup.okhttp3:okhttp:3.2.0'
     compile 'com.makeramen:roundedimageview:2.1.1'
+    compile 'com.jcodecraeer:xrecyclerview:1.2.7'
+
     // (v2.0.1) jsoup
     compile files('libs/jsoup-1.8.3.jar')
     //gson

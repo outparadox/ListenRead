@@ -16,7 +16,6 @@ import android.widget.TextView;
 
 import com.luhuanju.listenread.R;
 import com.luhuanju.listenread.entity.HotNewsWrap;
-import com.luhuanju.listenread.utils.KCommonUtil;
 import com.makeramen.roundedimageview.RoundedImageView;
 import com.squareup.picasso.Picasso;
 
@@ -56,9 +55,11 @@ public class HotNewsDataAdapter extends RecyclerView.Adapter<HotNewsDataAdapter.
     public void onBindViewHolder(HotNewsDataViewHolder hotNewsDataViewHolder, int position) {
         hotNewsDataViewHolder.hotnewsSource.setText(mHotNewsEntities.get(position).getAuthor());
         hotNewsDataViewHolder.hotnewsTitle.setText(mHotNewsEntities.get(position).getTitle());
-        if (KCommonUtil.Companion.isNotEmpty(mHotNewsEntities.get(position).getImg())) {
+        if (mHotNewsEntities.get(position).getImg() != null && !mHotNewsEntities.get(position).getImg().equals("")) {
             Picasso.with(mContext).load(mHotNewsEntities.get(position).getImg()).into(hotNewsDataViewHolder.hotnewsIma);
         }
+
+
     }
 
     @Override
