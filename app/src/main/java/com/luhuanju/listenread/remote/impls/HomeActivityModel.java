@@ -43,7 +43,7 @@ public class HomeActivityModel implements IHomeActivityModel, HomeActivity.HomeA
             mHotNewsFragment = mHotNewsFragment != null ? mHotNewsFragment : new HotNewsFragment();
             isFragmentEverShow(mFragmentTransaction, mHotNewsFragment, HOT_NEWS);
         } else if (TAB_TAG.equals(TRANSCEIVER)) {
-            mTransceiverFragment = mTransceiverFragment != null ? mTransceiverFragment : new KTransceiverFragment();
+            mTransceiverFragment = mTransceiverFragment != null ? mTransceiverFragment : KTransceiverFragment.Companion.newInstance();
             isFragmentEverShow(mFragmentTransaction, mTransceiverFragment, TRANSCEIVER);
         } else if (TAB_TAG.equals(SETTING)) {
             mSettingsFragment = mSettingsFragment != null ? mSettingsFragment : new SettingsFragment();

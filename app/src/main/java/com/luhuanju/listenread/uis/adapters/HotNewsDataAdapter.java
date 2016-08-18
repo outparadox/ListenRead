@@ -58,8 +58,6 @@ public class HotNewsDataAdapter extends RecyclerView.Adapter<HotNewsDataAdapter.
         if (mHotNewsEntities.get(position).getImg() != null && !mHotNewsEntities.get(position).getImg().equals("")) {
             Picasso.with(mContext).load(mHotNewsEntities.get(position).getImg()).into(hotNewsDataViewHolder.hotnewsIma);
         }
-
-
     }
 
     @Override

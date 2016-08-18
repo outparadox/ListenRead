@@ -12,4 +12,10 @@
     <color name="title_color">#454545</color>
     <color name="remark_color">#6E7B8B</color>
     <color name="content_color">#757575</color>
+
+    <!-- Upcoming movies view -->
+    <color name="list_title_text_color">#424242</color>
+    <color name="list_rating_color">#BDBDBD</color>
+    <color name="list_release_date_text_color">#FBC02D</color>
+    <color name="list_background_color">#E0E0E0</color>
 </resources>

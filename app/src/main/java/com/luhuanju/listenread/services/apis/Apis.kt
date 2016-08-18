@@ -8,7 +8,10 @@ import retrofit2.http.Query
 /**
  * Created by huanjulu on 16/8/12.
  */
-public interface AuthenticationAPI {
+ interface AuthenticationAPI {
     @GET("3023/news/channel")
     fun onHotNews(@Query("id") owner: String, @Query("page") repo: Int): Call<HotNewsWrap>
+
 }
+
+

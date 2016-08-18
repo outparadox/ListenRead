@@ -16,12 +16,12 @@
         "source": "/Users/luhuanju/Documents/ListenRead/circlerefresh/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.1.1/res/layout/abc_screen_simple.xml"
     },
     {
-        "merged": "/Users/luhuanju/Documents/ListenRead/circlerefresh/build/intermediates/res/merged/androidTest/debug/layout/abc_simple_dropdown_hint.xml",
-        "source": "/Users/luhuanju/Documents/ListenRead/circlerefresh/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.1.1/res/layout/abc_simple_dropdown_hint.xml"
-    },
-    {
         "merged": "/Users/luhuanju/Documents/ListenRead/circlerefresh/build/intermediates/res/merged/androidTest/debug/layout/abc_activity_chooser_view.xml",
         "source": "/Users/luhuanju/Documents/ListenRead/circlerefresh/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.1.1/res/layout/abc_activity_chooser_view.xml"
+    },
+    {
+        "merged": "/Users/luhuanju/Documents/ListenRead/circlerefresh/build/intermediates/res/merged/androidTest/debug/layout/abc_simple_dropdown_hint.xml",
+        "source": "/Users/luhuanju/Documents/ListenRead/circlerefresh/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.1.1/res/layout/abc_simple_dropdown_hint.xml"
     },
     {
         "merged": "/Users/luhuanju/Documents/ListenRead/circlerefresh/build/intermediates/res/merged/androidTest/debug/layout/abc_activity_chooser_view_list_item.xml",

@@ -56,7 +56,7 @@ public class XMLDataParseUtil {
         Future<Document> future = threadPol.submit(new Callable<Document>() {
             @Override
             public Document call() throws Exception {
-                mDocument = Jsoup.connect(baseUrl).get();
+                mDocument = Jsoup.connect(baseUrl).header("User-Agent", "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.4; en-US; rv:1.9.2.2) Gecko/20100316 Firefox/3.6.2").get();
                 return mDocument;
             }
         });
@@ -64,6 +64,7 @@ public class XMLDataParseUtil {
             return future.get();
         } catch (InterruptedException e) {
             e.printStackTrace();
+
         } catch (Exception e) {
             e.printStackTrace();
         }

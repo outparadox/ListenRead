@@ -1,2 +1,264 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
+
+    <item
+        jar="/Users/luhuanju/.gradle/caches/modules-2/files-2.1/io.reactivex/rxjava/1.1.6/2586312cd2b8a511e4c6236736f5a039fc0f2273/rxjava-1.1.6.jar"
+        jumboMode="true"
+        revision="22.0.1"
+        sha1="2586312cd2b8a511e4c6236736f5a039fc0f2273">
+        <dex dex="/Users/luhuanju/Documents/ListenRead/app/build/intermediates/transforms/dex/debug/folders/1000/10/rxjava-1.1.6_ffc4ab9de6fc561fa557a0470ef23a307c7d5781/classes.dex" />
+    </item>
+    <item
+        jar="/Users/luhuanju/Documents/ListenRead/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.0/jars/classes.jar"
+        jumboMode="true"
+        revision="22.0.1"
+        sha1="ddde541c289c8b816a8f8fd6c325d80788c522a6">
+        <dex dex="/Users/luhuanju/Documents/ListenRead/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-23.1.0_0cc53112557e26792f2932840efb1cfd0dc60413/classes.dex" />
+    </item>
+    <item
+        jar="/Users/luhuanju/.gradle/caches/modules-2/files-2.1/com.nineoldandroids/library/2.4.0/e9b63380f3a242dbdbf103a2355ad7e43bad17cb/library-2.4.0.jar"
+        jumboMode="true"
+        revision="22.0.1"
+        sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
+        <dex dex="/Users/luhuanju/Documents/ListenRead/app/build/intermediates/transforms/dex/debug/folders/1000/10/library-2.4.0_a5bfc3114ecfbab593ad4e46128a4a2852b8b4f3/classes.dex" />
+    </item>
+    <item
+        jar="/Users/luhuanju/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/logging-interceptor/3.0.1/1d232df84491c0453e077002509911301109409d/logging-interceptor-3.0.1.jar"
+        jumboMode="true"
+        revision="22.0.1"
+        sha1="1d232df84491c0453e077002509911301109409d">
+        <dex dex="/Users/luhuanju/Documents/ListenRead/app/build/intermediates/transforms/dex/debug/folders/1000/10/logging-interceptor-3.0.1_dcd338a85411df244be11517f3f6c6fbdc21997a/classes.dex" />
+    </item>
+    <item
+        jar="/Users/luhuanju/Documents/ListenRead/app/build/intermediates/exploded-aar/com.makeramen/roundedimageview/2.1.1/jars/classes.jar"
+        jumboMode="true"
+        revision="22.0.1"
+        sha1="2e76a4b693db19fdde80d30123204d0ed2454ea9">
+        <dex dex="/Users/luhuanju/Documents/ListenRead/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.makeramen-roundedimageview-2.1.1_fc811a27153bbbe7e492d411da8e9a7dc1f9cc26/classes.dex" />
+    </item>
+    <item
+        jar="/Users/luhuanju/Documents/ListenRead/app/build/intermediates/exploded-aar/com.joanzapata.iconify/android-iconify-ionicons/2.1.1/jars/classes.jar"
+        jumboMode="true"
+        revision="22.0.1"
+        sha1="a5514b083127937e028bd1520082080997874620">
+        <dex dex="/Users/luhuanju/Documents/ListenRead/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.joanzapata.iconify-android-iconify-ionicons-2.1.1_ba85ff5811ef665be2dba83ce3c8f22bad4d3871/classes.dex" />
+    </item>
+    <item
+        jar="/Users/luhuanju/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-runtime/1.0.3/10f40d016700cf4287e49fa1d51c2a8507e9b946/kotlin-runtime-1.0.3.jar"
+        jumboMode="true"
+        revision="22.0.1"
+        sha1="10f40d016700cf4287e49fa1d51c2a8507e9b946">
+        <dex dex="/Users/luhuanju/Documents/ListenRead/app/build/intermediates/transforms/dex/debug/folders/1000/10/kotlin-runtime-1.0.3_f45efa010e721bf873e72a9a07928fb96403aa6f/classes.dex" />
+    </item>
+    <item
+        jar="/Users/luhuanju/Documents/ListenRead/app/build/intermediates/exploded-aar/com.joanzapata.iconify/android-iconify/2.1.1/jars/classes.jar"
+        jumboMode="true"
+        revision="22.0.1"
+        sha1="3e9db26c95288c1954e7de86d9e94e1259fb608b">
+        <dex dex="/Users/luhuanju/Documents/ListenRead/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.joanzapata.iconify-android-iconify-2.1.1_9133995474199c4dd8fd8b162d42e0795c3837fc/classes.dex" />
+    </item>
+    <item
+        jar="/Users/luhuanju/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/3.2.0/f7873a2ebde246a45c2a8d6f3247108b4c88a879/okhttp-3.2.0.jar"
+        jumboMode="true"
+        revision="22.0.1"
+        sha1="f7873a2ebde246a45c2a8d6f3247108b4c88a879">
+        <dex dex="/Users/luhuanju/Documents/ListenRead/app/build/intermediates/transforms/dex/debug/folders/1000/10/okhttp-3.2.0_43a1de1fa4a4854b651184697b26a235671a199c/classes.dex" />
+    </item>
+    <item
+        jar="/Users/luhuanju/Documents/ListenRead/app/build/intermediates/exploded-aar/com.jcodecraeer/xrecyclerview/1.2.7/jars/classes.jar"
+        jumboMode="true"
+        revision="22.0.1"
+        sha1="0724e4d93c85866c8953b74776fa320efa122205">
+        <dex dex="/Users/luhuanju/Documents/ListenRead/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.jcodecraeer-xrecyclerview-1.2.7_008b6ed5444a4034ee67fad956e81deafbc7a061/classes.dex" />
+    </item>
+    <item
+        jar="/Users/luhuanju/.gradle/caches/modules-2/files-2.1/com.squareup.moshi/moshi/1.1.0/9c665b797ef9427f6d73572642dcb5f90270f7d3/moshi-1.1.0.jar"
+        jumboMode="true"
+        revision="22.0.1"
+        sha1="9c665b797ef9427f6d73572642dcb5f90270f7d3">
+        <dex dex="/Users/luhuanju/Documents/ListenRead/app/build/intermediates/transforms/dex/debug/folders/1000/10/moshi-1.1.0_17d647c3213d3ac0c530fca51a07fb928c15e76e/classes.dex" />
+    </item>
+    <item
+        jar="/Users/luhuanju/.gradle/caches/modules-2/files-2.1/io.reactivex/rxkotlin/0.60.0/6729c889262e7c2cb6bba30cb9aa93d78167f69b/rxkotlin-0.60.0.jar"
+        jumboMode="true"
+        revision="22.0.1"
+        sha1="6729c889262e7c2cb6bba30cb9aa93d78167f69b">
+        <dex dex="/Users/luhuanju/Documents/ListenRead/app/build/intermediates/transforms/dex/debug/folders/1000/10/rxkotlin-0.60.0_5704b8ced98e95bfd8b2829154e97110bc797764/classes.dex" />
+    </item>
+    <item
+        jar="/Users/luhuanju/.gradle/caches/modules-2/files-2.1/com.squareup.picasso/picasso/2.5.2/7446d06ec8d4f7ffcc53f1da37c95f200dcb9387/picasso-2.5.2.jar"
+        jumboMode="true"
+        revision="22.0.1"
+        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
+        <dex dex="/Users/luhuanju/Documents/ListenRead/app/build/intermediates/transforms/dex/debug/folders/1000/10/picasso-2.5.2_5ecb07aa85c266520d3a782afcbee8a47637706b/classes.dex" />
+    </item>
+    <item
+        jar="/Users/luhuanju/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.6.0/98476622f10715998eacf9240d6b479f12c66143/okio-1.6.0.jar"
+        jumboMode="true"
+        revision="22.0.1"
+        sha1="98476622f10715998eacf9240d6b479f12c66143">
+        <dex dex="/Users/luhuanju/Documents/ListenRead/app/build/intermediates/transforms/dex/debug/folders/1000/10/okio-1.6.0_015b2fd413ccf86eb7a199894e9d427d1967670e/classes.dex" />
+    </item>
+    <item
+        jar="/Users/luhuanju/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit2/converter-gson/2.0.1/2780d858273ce1bb90f6b12e1ef0d40f7741fca/converter-gson-2.0.1.jar"
+        jumboMode="true"
+        revision="22.0.1"
+        sha1="02780d858273ce1bb90f6b12e1ef0d40f7741fca">
+        <dex dex="/Users/luhuanju/Documents/ListenRead/app/build/intermediates/transforms/dex/debug/folders/1000/10/converter-gson-2.0.1_8b7e3dfc948d0518413084d0b86e089b64d80262/classes.dex" />
+    </item>
+    <item
+        jar="/Users/luhuanju/.gradle/caches/modules-2/files-2.1/org.jetbrains.anko/anko-sdk15/0.9/e741cd0d94e63a27bc7b8cbd8d04571c058bab32/anko-sdk15-0.9.jar"
+        jumboMode="true"
+        revision="22.0.1"
+        sha1="e741cd0d94e63a27bc7b8cbd8d04571c058bab32">
+        <dex dex="/Users/luhuanju/Documents/ListenRead/app/build/intermediates/transforms/dex/debug/folders/1000/10/anko-sdk15-0.9_0ba7bd4aa7639bdd5a5710fa3200c2feb2057640/classes.dex" />
+    </item>
+    <item
+        jar="/Users/luhuanju/Documents/ListenRead/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        revision="22.0.1"
+        sha1="1d8663176cd0f32fbc1d1662d96915369f222b67">
+        <dex dex="/Users/luhuanju/Documents/ListenRead/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_550af5f389b14da601a12269d0927c2accbd5205/classes.dex" />
+    </item>
+    <item
+        jar="/Users/luhuanju/Documents/ListenRead/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.0/jars/classes.jar"
+        jumboMode="true"
+        revision="22.0.1"
+        sha1="57ae0d750ff83f0c738d21720224ac7ea866a094">
+        <dex dex="/Users/luhuanju/Documents/ListenRead/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-23.1.0_efa00289f2f2c88485b0e33cc4aa2ce91b925d67/classes.dex" />
+    </item>
+    <item
+        jar="/Users/luhuanju/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/1.0.3/20738122b53399036c321eeb84687367757d622a/kotlin-stdlib-1.0.3.jar"
+        jumboMode="true"
+        revision="22.0.1"
+        sha1="20738122b53399036c321eeb84687367757d622a">
+        <dex dex="/Users/luhuanju/Documents/ListenRead/app/build/intermediates/transforms/dex/debug/folders/1000/10/kotlin-stdlib-1.0.3_2cce9d1ad232375cbe2f24c20078e29e63538dd7/classes.dex" />
+    </item>
+    <item
+        jar="/Users/luhuanju/Documents/ListenRead/app/libs/jsoup-1.8.3.jar"
+        jumboMode="true"
+        revision="22.0.1"
+        sha1="3a86e137575e4a45f5a9eec407f8135512e823a2">
+        <dex dex="/Users/luhuanju/Documents/ListenRead/app/build/intermediates/transforms/dex/debug/folders/1000/2/jsoup-1.8.3_b7f37b82ac329beda20d772567f0b2c1e81dc26c/classes.dex" />
+    </item>
+    <item
+        jar="/Users/luhuanju/Documents/ListenRead/app/build/intermediates/exploded-aar/io.reactivex/rxandroid/1.2.1/jars/classes.jar"
+        jumboMode="true"
+        revision="22.0.1"
+        sha1="5a2386ad9bfff580b206a7fe305cdccd00798159">
+        <dex dex="/Users/luhuanju/Documents/ListenRead/app/build/intermediates/transforms/dex/debug/folders/1000/10/io.reactivex-rxandroid-1.2.1_9f39c5bdc5c0d6787688b049bf92faa0b43b2610/classes.dex" />
+    </item>
+    <item
+        jar="/Users/luhuanju/.gradle/caches/modules-2/files-2.1/com.android.support/support-annotations/24.0.0/2943c74db6d4346ab8c6531adac91fa05c137c40/support-annotations-24.0.0.jar"
+        jumboMode="true"
+        revision="22.0.1"
+        sha1="2943c74db6d4346ab8c6531adac91fa05c137c40">
+        <dex dex="/Users/luhuanju/Documents/ListenRead/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-24.0.0_8ae6741b099115b7f570b92c7e2fd3f117c662dd/classes.dex" />
+    </item>
+    <item
+        jar="/Users/luhuanju/.gradle/caches/modules-2/files-2.1/org.jetbrains.anko/anko-support-v4/0.9/4616ffe811fc931672c50fb05834a62aa24cdab2/anko-support-v4-0.9.jar"
+        jumboMode="true"
+        revision="22.0.1"
+        sha1="4616ffe811fc931672c50fb05834a62aa24cdab2">
+        <dex dex="/Users/luhuanju/Documents/ListenRead/app/build/intermediates/transforms/dex/debug/folders/1000/10/anko-support-v4-0.9_26040a0094b4e347b309c79bc59625768ae27198/classes.dex" />
+    </item>
+    <item
+        jar="/Users/luhuanju/Documents/ListenRead/app/build/intermediates/exploded-aar/com.melnykov/floatingactionbutton/1.1.0/jars/classes.jar"
+        jumboMode="true"
+        revision="22.0.1"
+        sha1="ee9ae2b87d57a33a7381c75d54db12bdf2995656">
+        <dex dex="/Users/luhuanju/Documents/ListenRead/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.melnykov-floatingactionbutton-1.1.0_75dae19d7b01f5521b8d41d71d227e3f02f6b730/classes.dex" />
+    </item>
+    <item
+        jar="/Users/luhuanju/Documents/ListenRead/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/21.0.3/jars/classes.jar"
+        jumboMode="true"
+        revision="22.0.1"
+        sha1="00b0b7233e1ec64acebfac40d4983d32d4712426">
+        <dex dex="/Users/luhuanju/Documents/ListenRead/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-cardview-v7-21.0.3_aa6817f8dff381de550d90376cc9595d74486699/classes.dex" />
+    </item>
+    <item
+        jar="/Users/luhuanju/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit2/retrofit/2.0.1/27293c440d2085cde1d859528aff6e7d3b6ae40/retrofit-2.0.1.jar"
+        jumboMode="true"
+        revision="22.0.1"
+        sha1="027293c440d2085cde1d859528aff6e7d3b6ae40">
+        <dex dex="/Users/luhuanju/Documents/ListenRead/app/build/intermediates/transforms/dex/debug/folders/1000/10/retrofit-2.0.1_ae1837a8110e2b113b60a5b6dbd3d996492b97dc/classes.dex" />
+    </item>
+    <item
+        jar="/Users/luhuanju/Documents/ListenRead/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.1.0/jars/classes.jar"
+        jumboMode="true"
+        revision="22.0.1"
+        sha1="3f151e49c316a5ab2c065969a3b3b55ef9b393fc">
+        <dex dex="/Users/luhuanju/Documents/ListenRead/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-23.1.0_37379e9066999105c20de8ae2c3390cb52a46b00/classes.dex" />
+    </item>
+    <item
+        jar="/Users/luhuanju/Documents/ListenRead/app/build/intermediates/exploded-aar/com.jakewharton/butterknife/8.2.1/jars/classes.jar"
+        jumboMode="true"
+        revision="22.0.1"
+        sha1="ca5e58104f56f918f0fb3a5b1b371ab599ae56b2">
+        <dex dex="/Users/luhuanju/Documents/ListenRead/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.jakewharton-butterknife-8.2.1_15e14bfbb97cbe9c687c89183ff809d6873c3d74/classes.dex" />
+    </item>
+    <item
+        jar="/Users/luhuanju/Documents/ListenRead/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.0/jars/libs/internal_impl-23.1.0.jar"
+        jumboMode="true"
+        revision="22.0.1"
+        sha1="8716243bf04bae8d6c9ca94d27b9a9be7236f0a3">
+        <dex dex="/Users/luhuanju/Documents/ListenRead/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-23.1.0_836d3734d391fc95c83d46bd29664a6c72414a8f/classes.dex" />
+    </item>
+    <item
+        jar="/Users/luhuanju/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit2/adapter-rxjava/2.0.0-beta4/bd49baf667542c7d06f71e598bdee7fe57272013/adapter-rxjava-2.0.0-beta4.jar"
+        jumboMode="true"
+        revision="22.0.1"
+        sha1="bd49baf667542c7d06f71e598bdee7fe57272013">
+        <dex dex="/Users/luhuanju/Documents/ListenRead/app/build/intermediates/transforms/dex/debug/folders/1000/10/adapter-rxjava-2.0.0-beta4_8e9eef05598be87a8a4b1f24f3ff4f2cc3e7b965/classes.dex" />
+    </item>
+    <item
+        jar="/Users/luhuanju/.gradle/caches/modules-2/files-2.1/org.jetbrains.anko/anko-appcompat-v7/0.9/69676bf4015be3e182e00dbebea5ee0c9325e78a/anko-appcompat-v7-0.9.jar"
+        jumboMode="true"
+        revision="22.0.1"
+        sha1="69676bf4015be3e182e00dbebea5ee0c9325e78a">
+        <dex dex="/Users/luhuanju/Documents/ListenRead/app/build/intermediates/transforms/dex/debug/folders/1000/10/anko-appcompat-v7-0.9_f40445883749fd09863c730c754a9804c4123e70/classes.dex" />
+    </item>
+    <item
+        jar="/Users/luhuanju/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit2/converter-moshi/2.0.0/624ff1e32f3c5f5d69d24928306c633bbfde6323/converter-moshi-2.0.0.jar"
+        jumboMode="true"
+        revision="22.0.1"
+        sha1="624ff1e32f3c5f5d69d24928306c633bbfde6323">
+        <dex dex="/Users/luhuanju/Documents/ListenRead/app/build/intermediates/transforms/dex/debug/folders/1000/10/converter-moshi-2.0.0_6b89040b3fd93a33d9c50da580fc2cdaf13586bf/classes.dex" />
+    </item>
+    <item
+        jar="/Users/luhuanju/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.7/751f548c85fa49f330cecbb1875893f971b33c4e/gson-2.7.jar"
+        jumboMode="true"
+        revision="22.0.1"
+        sha1="751f548c85fa49f330cecbb1875893f971b33c4e">
+        <dex dex="/Users/luhuanju/Documents/ListenRead/app/build/intermediates/transforms/dex/debug/folders/1000/10/gson-2.7_a626b841592bb33f8f548aa60eeeb5073c940320/classes.dex" />
+    </item>
+    <item
+        jar="/Users/luhuanju/.gradle/caches/modules-2/files-2.1/org.jetbrains.anko/anko-common/0.9/26c6156bea5eb494474c90528240daadf4b067c8/anko-common-0.9.jar"
+        jumboMode="true"
+        revision="22.0.1"
+        sha1="26c6156bea5eb494474c90528240daadf4b067c8">
+        <dex dex="/Users/luhuanju/Documents/ListenRead/app/build/intermediates/transforms/dex/debug/folders/1000/10/anko-common-0.9_5904b0143febb247a90568d533436cb67ef17235/classes.dex" />
+    </item>
+    <item
+        jar="/Users/luhuanju/Documents/ListenRead/app/build/intermediates/exploded-aar/com.orhanobut/logger/1.15/jars/classes.jar"
+        jumboMode="true"
+        revision="22.0.1"
+        sha1="2a156b99fc7cc034308f942906b09d32754a4470">
+        <dex dex="/Users/luhuanju/Documents/ListenRead/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.orhanobut-logger-1.15_583daffa6c0d199f825d40aee5a6d2c5f4fa6bac/classes.dex" />
+    </item>
+    <item
+        jar="/Users/luhuanju/.gradle/caches/modules-2/files-2.1/com.jakewharton/butterknife-annotations/8.2.1/d6f54d76edfbe779a50a8636b10fd3f555d8f780/butterknife-annotations-8.2.1.jar"
+        jumboMode="true"
+        revision="22.0.1"
+        sha1="d6f54d76edfbe779a50a8636b10fd3f555d8f780">
+        <dex dex="/Users/luhuanju/Documents/ListenRead/app/build/intermediates/transforms/dex/debug/folders/1000/10/butterknife-annotations-8.2.1_7b39b626a670bfa5f7af61bdee58963e8c74376d/classes.dex" />
+    </item>
+    <item
+        jar="/Users/luhuanju/Documents/ListenRead/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="22.0.1"
+        sha1="66ca59a5115c0ed1a9ede977022a3289a6b16505">
+        <dex dex="/Users/luhuanju/Documents/ListenRead/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_2cc15b8dfcd7588296473ba58af21b4aa35fc610/classes.dex" />
+    </item>
+
+</items>
