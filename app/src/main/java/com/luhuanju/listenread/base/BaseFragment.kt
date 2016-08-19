@@ -39,7 +39,7 @@ abstract class BaseFragment : Fragment() {
     }
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View {
-         vRoot = inflater!!.inflate(mContentLayoutResourceId, container, false)
+        vRoot = inflater!!.inflate(mContentLayoutResourceId, container, false)
         setUpUi(vRoot)
         return vRoot
     }

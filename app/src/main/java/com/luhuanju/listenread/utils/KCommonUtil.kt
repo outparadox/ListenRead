@@ -36,6 +36,10 @@ class KCommonUtil {
             if (content != null && !content.equals("") && content != "") return true else false;
             return true;
         }
+
+        fun <T> analyticalGson(gsonString: String, classType: Class<T>): Class<T> {
+            return Gson().fromJson(gsonString, classType.javaClass)
+        }
     }
 }
 

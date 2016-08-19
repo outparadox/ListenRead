@@ -18,8 +18,11 @@ import java.util.*
 
 class KTransceiverFragment : BaseFragment(), XRecyclerView.LoadingListener, ITransceiverContract.ITransceiverVu {
 
+    var mPage = 0
 
-//    val rvMovie by Delegates.lazy { getRootView().findViewById()<XRecyclerView>(R.id.transceiver_recy) }
+    var isCurrentVisity=false
+
+    var mTransceiverRecy: XRecyclerView? = null
 
     override val mContentLayoutResourceId: Int = R.layout.fragment_transceiver
 
@@ -32,6 +35,8 @@ class KTransceiverFragment : BaseFragment(), XRecyclerView.LoadingListener, ITra
     companion object {
 
         internal var TAG = KTransceiverFragment.javaClass.toString();
+
+        internal val KEY="TRANSCEIVER_ITEM_KEY"
 
         fun newInstance(): KTransceiverFragment {
             return KTransceiverFragment()
@@ -46,22 +51,31 @@ class KTransceiverFragment : BaseFragment(), XRecyclerView.LoadingListener, ITra
     override fun setUpUi(view: View) {
         super<BaseFragment>.setUpUi(view)
         Logger.d("setUpUi")
-        var mTransceiverRecy = view.findViewById(R.id.transceiver_recy) as XRecyclerView
-        mTransceiverAdapter = TransceiverAdapter(activity,mHotNewsEntities)
+        mTransceiverRecy = view.findViewById(R.id.transceiver_recy) as XRecyclerView
+        mTransceiverRecy!!.setLoadingListener(this)
+        mTransceiverAdapter = TransceiverAdapter(activity, mHotNewsEntities)
         val mLayoutManager = LinearLayoutManager(activity)
-        mTransceiverRecy.setAdapter(mTransceiverAdapter)
-        mTransceiverRecy.setLayoutManager(mLayoutManager)
-        mTransceiverPresenter!!.onRequestInP(null)
+        mTransceiverRecy!!.setAdapter(mTransceiverAdapter)
+        mTransceiverRecy!!.setLayoutManager(mLayoutManager)
+        if (isCurrentVisity) mPage = 1
+        mTransceiverPresenter!!.onRequestInP(mPage)
     }
 
     override fun onLoadMore() {
+        Logger.d("onLoadMore")
+        mPage += 1
+        mTransceiverPresenter!!.onRequestInP(mPage)
     }
 
     override fun onRefresh() {
+        Logger.d("onRefresh")
+        mPage = 1;
+        mTransceiverPresenter!!.onRequestInP(mPage)
     }
 
     override fun <T> onShowDataInV(t: T) {
         mTransceiverAdapter!!.refreshData(t as List<TransreveiverEntity>)
+        if (mPage == 1) mTransceiverRecy!!.refreshComplete() else mTransceiverRecy!!.loadMoreComplete()
     }
 
     override fun <T : Any?> onSetPresenter(t: T) {
@@ -69,5 +83,14 @@ class KTransceiverFragment : BaseFragment(), XRecyclerView.LoadingListener, ITra
 
     }
 
+
+    override fun setUserVisibleHint(isVisibleToUser: Boolean) {
+        super.setUserVisibleHint(isVisibleToUser)
+        Logger.d("setUserVisibleHint")
+        if (getUserVisibleHint())
+            isCurrentVisity = true
+        else isCurrentVisity = false
+
+    }
 
 }

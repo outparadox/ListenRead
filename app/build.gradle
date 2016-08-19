@@ -4,8 +4,6 @@ apply plugin: 'android-apt'
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
-//apply plugin: 'realm-android'
-
 
 buildscript {
     repositories {
@@ -23,11 +21,18 @@ android {
 
     defaultConfig {
         applicationId "com.luhuanju.listenread"
-        minSdkVersion 15
+        minSdkVersion 16
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
     }
+
+    //lambda
+    compileOptions {//使用JAVA8语法解析
+//        sourceCompatibility JavaVersion.VERSION_1_8
+//        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -81,5 +86,9 @@ dependencies {
     //rx
     compile 'io.reactivex:rxkotlin:0.60.0'
     compile 'io.reactivex:rxandroid:1.2.1'
+    //
+    compile 'com.github.iammert:MusicPlayerView:e3b937c729'
+    //lamda
+//    classpath 'me.tatarka:gradle-retrolambda:3.2.4'
 
 }

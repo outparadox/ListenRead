@@ -17,8 +17,11 @@ class TransceiverModel : ITransceiverModel {
 
     var transreveiverEntites = mutableListOf<TransreveiverEntity>()
 
-    override fun <T> onRequestDataInM(callback: IRemoteCallback) {
-        for (v in XMLDataParseUtil.onInstance().DocumentPOJO(CommonConfig.BASE_TRANSCEIVER).getElementsByClass("box")) {
+    var baseUrl: String? = null
+
+    override fun <T> onRequestDataInM(callback: IRemoteCallback, page: Int) {
+        Logger.d("url:"+urlJudgement(page))
+        for (v in XMLDataParseUtil.onInstance().DocumentPOJO(urlJudgement(page)).getElementsByClass("box")) {
             1.onSetTransceiverEntity(v)
         }
         callback.onlyRemoteDataSucess(transreveiverEntites)
@@ -33,18 +36,19 @@ class TransceiverModel : ITransceiverModel {
 
         transreceiver.harf = element.getElementsByTag("a").attr("href")
 
-        transreceiver.remark = element.getElementsByClass("entry").first().text().replace(">>阅读全文及试听","")
+        transreceiver.remark = element.getElementsByClass("entry").first().text().replace(">>阅读全文及试听", "")
 
 //        transreceiver.comment = element.getElementsByClass("ds-thread-count").text()//
 
         transreceiver.image = element.getElementsByTag("img").attr("src")//
 
-        transreceiver.time = element.getElementsByClass("post-meta").first().text().replace("暂无评论","")//
+        transreceiver.time = element.getElementsByClass("post-meta").first().text().replace("暂无评论", "")//
 
-
-        Logger.d("title:" + transreceiver.title + "image:" + transreceiver.image + "harf" + transreceiver.harf + "remark" +
-                transreceiver.remark + "time" + transreceiver.time)
         transreveiverEntites.add(transreceiver)
+    }
+
+    fun urlJudgement(page: Int): String {
+        if (page == 1) return CommonConfig.BASE_TRANSCEIVER else return CommonConfig.BASE_TRANSCEIVER + "&paged=" + page
     }
 
 }

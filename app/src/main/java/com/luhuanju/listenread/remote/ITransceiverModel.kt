@@ -8,6 +8,6 @@ import com.luhuanju.listenread.base.IRemoteCallback
 
 interface ITransceiverModel {
 
-    open abstract fun <T> onRequestDataInM(callback: IRemoteCallback)
+    open abstract fun <T> onRequestDataInM(callback: IRemoteCallback,page :Int)
 
 }

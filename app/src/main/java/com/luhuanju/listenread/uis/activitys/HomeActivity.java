@@ -16,8 +16,6 @@ import com.luhuanju.listenread.contracts.IHomeActivityContract;
 import com.luhuanju.listenread.presenters.KHomeActivityPresenter;
 import com.luhuanju.listenread.utils.views.FontHelper;
 
-import javax.net.ssl.ManagerFactoryParameters;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -51,6 +49,9 @@ public class HomeActivity extends FragmentActivity implements IHomeActivityContr
     void onClickT() {
         mHomeActivityCallBack.onSelecteTabCallBack(TRANSCEIVER);
         mHomeActivityPresenter.getObjectComponentOnP(this);
+
+
+//        Intent intent=new Intent(this,TransceiverActivity.class);startActivity(intent);
     }
 
     @OnClick(R.id.tv_weekly)

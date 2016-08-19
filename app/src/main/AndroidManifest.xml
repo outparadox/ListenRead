@@ -22,8 +22,7 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <!--<activity android:name=".apis.retiofit.Main2Activity">-->
-        <!--</activity>-->
+        <activity android:name=".uis.activitys.TransceiverActivity"/>
     </application>
 
 </manifest>
