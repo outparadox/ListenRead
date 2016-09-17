@@ -18,4 +18,7 @@ class TransreveiverEntity {
 
     var harf: String ? = null;
 
+
+
+
 }

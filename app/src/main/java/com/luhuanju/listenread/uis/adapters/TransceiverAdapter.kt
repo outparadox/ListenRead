@@ -45,8 +45,8 @@ class TransceiverAdapter(var context: Context, var transceiverEntites: List<Tran
 
 
         holder!!.transceiverItem.setOnClickListener {
-            val intent=Intent(context,TransceiverActivity::class.java)
-            intent.putExtra(KTransceiverFragment.KEY,Gson().toJson(transceiverEntites[position]))
+            val intent = Intent(context, TransceiverActivity::class.java)
+            intent.putExtra(KTransceiverFragment.KEY, Gson().toJson(transceiverEntites[position]))
             context.startActivity(intent)
         }
     }
@@ -54,15 +54,11 @@ class TransceiverAdapter(var context: Context, var transceiverEntites: List<Tran
 
     class TransceiverViewholder(view: View) : RecyclerView.ViewHolder(view) {
 
-
-         val transceiverItem: CardView = view.find(R.id.card_transceiver_item)
+        val transceiverItem: CardView = view.find(R.id.card_transceiver_item)
         private val transceiverIma: RoundedImageView = view.find(R.id.ima_transceiver_photo)
         private val transceiverTitle: TextView = view.find(R.id.tv_transceiver_title)
         private val transceiverRemark: TextView = view.find(R.id.tv_transceiver_remark)
         private val transceiverDate: TextView = view.find(R.id.tv_transceiver_date)
-
-
-
 
 
         open fun setItem(transceiverEntity: TransreveiverEntity, position: Int, context: Context) {

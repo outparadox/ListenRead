@@ -29,7 +29,6 @@ public class HomeActivityModel implements IHomeActivityModel, HomeActivity.HomeA
     private KTransceiverFragment mTransceiverFragment = null;
     private SettingsFragment mSettingsFragment = null;
 
-
     @Override
     public FragmentTransaction getObjectComponentOnM(HomeActivity context) {
         mFragmentManager = mFragmentManager != null ? mFragmentManager : context.getSupportFragmentManager();

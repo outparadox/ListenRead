@@ -12,7 +12,6 @@ import org.jetbrains.anko.find
  * Created by huanjulu on 16/8/19.
  */
 
-
 abstract class BaseActivity : AppCompatActivity() {
 
 
@@ -22,10 +21,6 @@ abstract class BaseActivity : AppCompatActivity() {
     val toolbar: Toolbar by lazy { find<Toolbar>(R.id.toolbar) }
 
     companion object {
-
-//        open fun newIntent(context: Context): Intent {
-//            return Intent(context, javaClass<BaseActivity>())
-//        }
 
     }
 

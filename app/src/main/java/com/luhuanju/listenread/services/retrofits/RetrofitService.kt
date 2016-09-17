@@ -31,8 +31,7 @@ object RetrofitService {
         val client = OkHttpClient.Builder().addInterceptor(interceptor).retryOnConnectionFailure(true).connectTimeout(15, TimeUnit.SECONDS).addNetworkInterceptor(CustomeInterceptor()).build()
         val retrofitAdapter = Retrofit.Builder().baseUrl(CommonConfig.BASE_URL)
                 .client(client)
-                .addConverterFactory(GsonConverterFactory
-                        .create(KCommonUtil.Companion.creatGson()))
+                .addConverterFactory(GsonConverterFactory.create(KCommonUtil.Companion.creatGson()))
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                 .build();
         return retrofitAdapter!!.create<T>(classType)

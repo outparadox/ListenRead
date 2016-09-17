@@ -7,8 +7,9 @@ package com.luhuanju.listenread.utils.application;/*
 
 import android.app.Application;
 import android.content.Context;
+import android.support.multidex.MultiDexApplication;
 
-public class AppApplication extends Application {
+public class AppApplication extends MultiDexApplication implements Thread.UncaughtExceptionHandler {
 
     private static Application context;
 
@@ -27,5 +28,10 @@ public class AppApplication extends Application {
     public static Context getApplication() {
         return
                 context;
+    }
+
+    @Override
+    public void uncaughtException(Thread thread, Throwable ex) {
+
     }
 }

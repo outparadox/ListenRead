@@ -72,11 +72,11 @@
         "source": "/Users/luhuanju/Documents/ListenRead/circlerefresh/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.1.1/res/drawable/abc_item_background_holo_light.xml"
     },
     {
-        "merged": "/Users/luhuanju/Documents/ListenRead/circlerefresh/build/intermediates/res/merged/release/drawable/abc_switch_thumb_material.xml",
-        "source": "/Users/luhuanju/Documents/ListenRead/circlerefresh/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.1.1/res/drawable/abc_switch_thumb_material.xml"
-    },
-    {
         "merged": "/Users/luhuanju/Documents/ListenRead/circlerefresh/build/intermediates/res/merged/release/drawable/abc_textfield_search_material.xml",
         "source": "/Users/luhuanju/Documents/ListenRead/circlerefresh/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.1.1/res/drawable/abc_textfield_search_material.xml"
+    },
+    {
+        "merged": "/Users/luhuanju/Documents/ListenRead/circlerefresh/build/intermediates/res/merged/release/drawable/abc_switch_thumb_material.xml",
+        "source": "/Users/luhuanju/Documents/ListenRead/circlerefresh/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.1.1/res/drawable/abc_switch_thumb_material.xml"
     }
 ]

@@ -22,7 +22,7 @@
 
         <co.mobiwise.library.MusicPlayerView
             android:id="@+id/transceiver_view"
-            android:layout_width="300dp"
+            android:layout_width="match_parent"
             android:layout_height="300dp"
             android:layout_gravity="center"
             app:buttonColor="#FF0028"
@@ -32,5 +32,11 @@
             app:textSize="14sp"/>
 
     </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/transceiver_detail_recy"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"/>
 
 </LinearLayout>
